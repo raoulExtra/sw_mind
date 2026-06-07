@@ -47,6 +47,8 @@
 2. **whatsapp-python** - Better for async/high-concurrency file processing
 3. **green-api** - Specialized, good if already using BSP
 
+## File Handling Patterns
+
 1. **Upload then Send**: Upload file to platform, then send message reference
 2. **Direct Base64**: Embed file directly in message body
 3. **URL Reference**: Pass HTTP/HTTPS URL to file
