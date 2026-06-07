@@ -1,0 +1,5 @@
+# Test queries for file harness
+hello world
+echo test
+# Another comment
+test query
