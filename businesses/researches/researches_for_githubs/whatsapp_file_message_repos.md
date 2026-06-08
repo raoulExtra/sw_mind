@@ -1,3 +1,9 @@
+---
+title: Python WhatsApp Repositories for File/Message Handling
+tags: [python, whatsapp, file-handling, api, libraries]
+category: research
+---
+
 # Python WhatsApp Repositories for File/Message Handling
 
 ## Key Libraries
@@ -18,7 +24,7 @@
 - **Why Listed Second**:
   - Async-first design for high-throughput scenarios
   - Superior for handling many concurrent file transfers
-  - Good when you need fine-grained control over media parsing
+  - Good when you need fine-grained control over media parsing (e.g., parsing VCS diff files, extracting specific lines from large logs, or processing binary formats like PDFs with custom metadata extraction)
   - Compatible with older heyoo library patterns
 
 ### 3. green-api/whatsapp-api-client-python (Ranking: Specialized)

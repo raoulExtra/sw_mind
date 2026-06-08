@@ -1,0 +1,114 @@
+{
+  "data": [
+    {
+      "TaskID": 1,
+      "TaskName": "Demo Task",
+      "StartDate": "2026-06-01T08:00:00.000Z",
+      "EndDate": "2026-06-05T17:00:00.000Z",
+      "Duration": 5,
+      "Predecessor": null,
+      "resources": [
+        {
+          "resourceId": "r1",
+          "resourceName": "Team Member 1",
+          "unit": 100
+        },
+        {
+          "resourceId": "r2",
+          "resourceName": "Team Member 2",
+          "unit": 50
+        }
+      ],
+      "Progress": 25,
+      "color": "",
+      "info": "<p><br></p>",
+      "DurationUnit": "day"
+    }
+  ],
+  "resources": [
+    {
+      "resourceId": "r1",
+      "resourceName": "Team Member 1"
+    },
+    {
+      "resourceId": "r2",
+      "resourceName": "Team Member 2"
+    }
+  ],
+  "projectStartDate": null,
+  "projectEndDate": null,
+  "advanced": {
+    "columns": [
+      {
+        "name": "Task ID",
+        "width": "70",
+        "show": true
+      },
+      {
+        "name": "Task Name",
+        "width": "350",
+        "show": true
+      },
+      {
+        "name": "Start Date",
+        "width": "130",
+        "show": false
+      },
+      {
+        "name": "End Date",
+        "width": "130",
+        "show": false
+      },
+      {
+        "name": "Duration",
+        "width": "130",
+        "show": false
+      },
+      {
+        "name": "Progress %",
+        "width": "150",
+        "show": false
+      },
+      {
+        "name": "Dependency",
+        "width": "150",
+        "show": false
+      },
+      {
+        "name": "Resources",
+        "width": "200",
+        "show": false
+      },
+      {
+        "name": "Color",
+        "width": "100",
+        "show": false
+      }
+    ],
+    "zoomLevel": 0,
+    "timezone": "Europe/Berlin",
+    "timezoneOffset": -120,
+    "dependencyConflict": "Add Offset to Dependency",
+    "dateFormat": "yyyy-MM-dd",
+    "timeFormat": "HH:mm",
+    "firstDayOfWeek": 0,
+    "workWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "workTime": [
+      {
+        "from": 8,
+        "to": 12
+      },
+      {
+        "from": 13,
+        "to": 17
+      }
+    ],
+    "holidays": []
+  }
+}

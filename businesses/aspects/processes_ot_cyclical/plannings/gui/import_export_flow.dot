@@ -1,0 +1,14 @@
+digraph ImportExport {
+  rankdir=LR;
+  node [shape=box, fontname="Segoe UI, Roboto, Helvetica Neue", fontsize=12];
+  edge [color="#1a365d", arrowhead=vee];
+  
+  import_export_options [label="Import Export Options", fillcolor="#343a40", fontcolor="white", style="filled,rounded"];
+  import_export_img [label="", image="import_export_options.png", style=filled, margin="8,8"];
+  try_cloud_img[label="",image="try_cloud.png", style=filled, margin="8,8"];
+  try_cloud [label="Try Cloud", fillcolor="#28a745", fontcolor="white", style="filled,rounded"];
+  
+  import_export_options -> import_export_img [arrowhead=none];
+  try_cloud -> try_cloud_img [arrowhead=none];
+  import_export_options -> try_cloud [label="click", style=dashed];
+}

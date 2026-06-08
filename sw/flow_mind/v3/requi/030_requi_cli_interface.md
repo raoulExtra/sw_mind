@@ -1,0 +1,37 @@
+```yaml
+title: 'Requirements: Flow Mind v1 CLI Interface'
+tags:
+- flow_mind
+- cli
+- requirements
+- interface
+persona: kilo_extension
+status: active
+version: V00.01.00
+updated: 2026-06-08
+summary: 'CLI interface requirements for Flow Mind workflow engine.'
+```
+
+# Requirements: Flow Mind v1 CLI Interface
+
+> Version: V00.01.00
+
+## Overview
+
+CLI interface requirements for workflow execution and state management.
+
+## Functional Requirements
+
+### CLI Interface
+- [ ] **FR-FM-13** `fm_cli run <workflow>` command to execute workflows
+- [ ] **FR-FM-14** `fm_cli status` to show current state
+- [ ] **FR-FM-15** `fm_cli plan` to generate plans
+- [ ] **FR-FM-16** `fm_cli verify` to validate current state
+
+---
+
+## Change History
+
+| Version | Date | Author | Reason |
+|---------|------|--------|--------|
+| V00.01.00 | 2026-06-08 | ai(kilo laguna) | Initial CLI interface requirements |

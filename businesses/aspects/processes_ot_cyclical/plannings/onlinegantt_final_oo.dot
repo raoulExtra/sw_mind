@@ -1,0 +1,74 @@
+digraph OnlineGanttFinalOO {
+    fontname="Verdana";
+    fontsize=10;
+    rankdir=LR;
+    node [shape=record, style=filled, fillcolor=white, fontname="Verdana", fontsize=9];
+
+    // --- CLASS DEFINITIONS ---
+    subgraph cluster_Classes {
+        label = "System Classes";
+        style = dashed; color = grey;
+        
+        Class_Button [label="{ GUI_Button | + id: String\l+ label: String\l+ hint: String\l+ hexColor: String\l | + onClick()\l }", fillcolor="#E1F5FE"];
+        Class_Dropdown [label="{ GUI_Dropdown | + id: String\l+ options: List\<String\>\l | + onSelect()\l }", fillcolor="#F3E5F5"];
+        Class_Menu [label="{ GUI_Menu | + id: String\l+ items: List\<GUI_Button\>\l | + toggle()\l }", fillcolor="#FFF9C4"];
+    }
+
+    // --- MAIN HEADER ---
+    subgraph cluster_Header {
+        label = "Header Components";
+        btn_TryCloud [label="btn_TryCloud : GUI_Button | label: 'Try Cloud'\lhexColor: '#28a745'"];
+        btn_Reviews [label="btn_Reviews : GUI_Button | label: 'Reviews'\lhexColor: '#ffc107'"];
+        btn_Hamburger [label="btn_Hamburger : GUI_Button | label: '≡ (Hamburger)'\lhint: 'Toggle Menu'"];
+    }
+
+    // --- TOOLBAR ---
+    subgraph cluster_Toolbar {
+        label = "Primary Toolbar";
+        btn_New [label="btn_New : GUI_Button | label: 'New'\lhexColor: '#343a40'"];
+        btn_Open [label="btn_Open : GUI_Button | label: 'Open (.gantt file)'"];
+        btn_SaveAs [label="btn_SaveAs : GUI_Button | label: 'Save As (.gantt file)'"];
+        
+        subgraph cluster_ImpExp {
+            label = "Import/Export Subsystem";
+            btn_ImpExp [label="btn_ImpExp : GUI_Button | label: 'Import / Export'"];
+            menu_ImpExp [label="menu_ImpExp : GUI_Menu | items: [\l- Import from Excel\l- Export to Excel\l- Export to PDF\l- Export to Image\l]"];
+            btn_ImpExp -> menu_ImpExp [label="toggles"];
+        }
+    }
+
+    // --- GANTT CONTROLS ---
+    subgraph cluster_GanttControls {
+        label = "Gantt Specific Controls";
+        btn_Add [label="btn_Add : GUI_Button | id: 'GanttContainer_add'\llabel: 'Add'"];
+        btn_Edit [label="btn_Edit : GUI_Button | id: 'GanttContainer_edit'\llabel: 'Edit'"];
+        btn_Delete [label="btn_Delete : GUI_Button | id: 'GanttContainer_delete'\llabel: 'Delete'"];
+        
+        subgraph cluster_Zoom {
+            label = "Zoom Management";
+            btn_ZoomIn [label="btn_ZoomIn : GUI_Button | id: 'GanttContainer_zoomin'"];
+            btn_ZoomOut [label="btn_ZoomOut : GUI_Button | id: 'GanttContainer_zoomout'"];
+            btn_ZoomFit [label="btn_ZoomFit : GUI_Button | id: 'GanttContainer_zoomtofit'\llabel: 'Zoom to fit'"];
+        }
+    }
+
+    // --- NAVIGATION ---
+    subgraph cluster_Nav {
+        label = "View & Filter Navigation";
+        dd_View [label="dd_View : GUI_Dropdown | id: 'view'\loptions: [\l- Project View\l- Resource View\l- Edit Resources\l- Edit Settings\l- Share\l- Revisions\l]"];
+        dd_Filter [label="dd_Filter : GUI_Dropdown | id: 'presetFilter'\loptions: [\l- All Tasks\l- Remaining Tasks\l- Overdue Tasks\l]"];
+    }
+
+    // --- FOOTER ---
+    subgraph cluster_Footer {
+        label = "Footer Structure";
+        menu_Footer [label="menu_Footer : GUI_Menu | items: [\l- About Us\l- Testimonials\l- Templates\l- AI / API\l- Terms / Privacy\l]"];
+        btn_Translate [label="btn_Translate : GUI_Button | label: 'Translate this page'"];
+    }
+
+    // Relationships
+    btn_TryCloud -> Class_Button;
+    btn_ZoomFit -> Class_Button;
+    dd_View -> Class_Dropdown;
+    menu_ImpExp -> Class_Menu;
+}
