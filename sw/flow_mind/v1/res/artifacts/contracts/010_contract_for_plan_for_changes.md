@@ -1,19 +1,19 @@
 ```yaml
-title: 'Plan: Changes Based on Requirements Check for Requis'
+title: 'Contract: Plan for Changes'
 tags:
 - flow_mind
+- contract
 - plan
 - changes
-- user_input
 - v1
 persona: developer
 status: active
 version: V00.01.00
 updated: 2026-06-08
-summary: 'Plan for processing and implementing changes based on user input'
+summary: 'Contract for implementing changes based on user input'
 ```
 
-# Plan: Changes Based on Requirements Check for Requis
+# Contract: Plan for Changes
 
 ## 1. Change Request intake
 
