@@ -17,7 +17,7 @@ summary: 'Plan for checking completeness and consistency of requirements'
 ## 1. Completeness Check
 
 ### 1.1 Coverage Analysis
-- Verify all requirements in `*/requi/` have corresponding implementation
+- Verify all requirements in `*/requi/` have corresponding `*/tests/{testphase}` implementation
 - Cross-reference requirement IDs with test cases
 - Ensure no orphaned requirements exist
 
