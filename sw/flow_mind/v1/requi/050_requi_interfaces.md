@@ -10,7 +10,7 @@ persona: kilo_extension
 status: active
 version: V00.04.00
 updated: 2026-06-08
-summary: 'Interface contract definitions for Flow Mind v1 workflow engine.'
+summary: 'Interface contract definitions for Flow Mind v1 flow engine.'
 ```
 
 # Requirements: Flow Mind v1 Interfaces

@@ -3,13 +3,13 @@ title: 'Examples: Flow Mind v1 Workflows'
 tags:
 - flow_mind
 - examples
-- workflows
+- flows
 - v1
 persona: kilo_extension
 status: active
 version: V00.02.00
 updated: 2026-06-08
-summary: 'Example YAML workflows for Flow Mind v1 simulation.'
+summary: 'Example YAML flows for Flow Mind v1 simulation.'
 ```
 
 # Examples: Flow Mind v1 Workflows
@@ -21,14 +21,14 @@ summary: 'Example YAML workflows for Flow Mind v1 simulation.'
 ### Workflow Definition (YAML)
 
 ```yaml
-workflow:
+flow:
   id: simple_plan
   name: "Simple Plan Execution"
   start_state: init
   states:
     - name: init
       on_enter:
-        - log: "Starting workflow"
+        - log: "Starting flow"
       transitions:
         - to: plan
           when: always
@@ -55,7 +55,7 @@ workflow:
 
 ```yaml
 state:
-  workflow_id: simple_plan
+  flow_id: simple_plan
   current_step: verify
   data:
     plan:
@@ -73,7 +73,7 @@ state:
 ### CLI Output Example
 
 ```yaml
-workflow: simple_plan
+flow: simple_plan
 status: running
 current_step: verify
 step_status: pending
@@ -94,6 +94,6 @@ progress:
 
 | Version | Date | Author | Reason |
 |---------|------|--------|--------|
-| V00.01.00 | 2026-06-08 | ai(kilo laguna) | Initial workflow examples |
+| V00.01.00 | 2026-06-08 | ai(kilo laguna) | Initial flow examples |
 | V00.02.00 | 2026-06-08 | ai(kilo laguna) | Converted to YAML in MD format |
 | V00.02.00 | 2026-06-08 | ai(kilo laguna) | Added Test chapter per convention |

@@ -10,7 +10,7 @@ persona: kilo_extension
 status: active
 version: V00.03.00
 updated: 2026-06-08
-summary: 'Design pattern specifications for Flow Mind v1 workflow engine.'
+summary: 'Design pattern specifications for Flow Mind v1 flow engine.'
 ```
 
 # Requirements: Flow Mind v1 Design Patterns
@@ -24,9 +24,9 @@ Design pattern specifications for Flow Mind v1 components. These define rules an
 ## Functional Requirements
 
 ### Design Patterns (Specification)
-- [ ] **FR-FM-OO-09** Factory pattern: workflow and agent instantiation rules
+- [ ] **FR-FM-OO-09** Factory pattern: flow and agent instantiation rules
   ```pseudocode
-  WorkflowFactory.create(definition: WorkflowDef) -> Workflow
+  FlowFactory.create(definition: FlowDef) -> Flow
   AgentFactory.create(capabilities: AgentCaps) -> Agent
   ```
 - [ ] **FR-FM-OO-10** Observer pattern: state change notification specifications

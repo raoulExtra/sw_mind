@@ -8,7 +8,7 @@ persona: kilo_extension
 status: active
 version: V00.02.00
 updated: 2026-06-08
-summary: 'Glossary of terms for Flow Mind v1 workflow engine.'
+summary: 'Glossary of terms for Flow Mind v1 flow engine.'
 ```
 
 # Glossary: Flow Mind v1
@@ -20,11 +20,11 @@ summary: 'Glossary of terms for Flow Mind v1 workflow engine.'
 | Term | Definition |
 |------|------------|
 | **Agent** | Component that handles ambiguity and planning operations |
-| **Artifact** | Output from workflow execution (plan, output, or verification result) |
-| **State** | Representation of workflow execution status |
+| **Artifact** | Output from flow execution (plan, output, or verification result) |
+| **State** | Representation of flow execution status |
 | **Transition** | Movement from one state to another |
 | **Verifier** | Component that independently validates artifacts |
-| **Workflow** | Defined sequence of states and transitions |
+| **Flow** | Defined sequence of states and transitions |
 
 ---
 

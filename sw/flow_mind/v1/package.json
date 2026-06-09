@@ -1,0 +1,19 @@
+{
+  "name": "flow-mind-v1",
+  "version": "1.0.0",
+  "description": "Flow Mind v1 flow engine",
+  "scripts": {
+    "test": "mocha --require ts-node/register src/ts/tests/unit/**/*.test.ts",
+    "test:watch": "npm test -- --watch"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.0.0",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.0.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.0.0"
+  }
+}

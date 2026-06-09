@@ -13,17 +13,18 @@ updated: 2026-06-08
 summary: 'Example flow demonstrating basic state machine with plan, verify, and complete states.'
 extends: 010_flow_base
 ```
+
 See also: [Base Flow Template](./010_flow_base.md)
 
 ```yaml
-workflow:
+flow:
   id: simple_plan
   name: "Simple Plan Execution"
   start_state: init
   states:
     - name: init
       on_enter:
-        - log: "Starting workflow"
+        - log: "Starting flow"
       transitions:
         - to: plan
           when: always
@@ -43,5 +44,5 @@ workflow:
           when: plan_invalid
     - name: complete
       on_enter:
-        - log: "Workflow complete"
+        - log: "Flow complete"
 ```

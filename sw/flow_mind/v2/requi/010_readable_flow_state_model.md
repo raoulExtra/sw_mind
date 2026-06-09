@@ -12,7 +12,7 @@ persona: product_manager
 status: active
 version: V00.01.00
 updated: 2026-06-08
-summary: 'A clean, human-readable machine model for Flow Mind workflows.'
+summary: 'A clean, human-readable machine model for Flow Mind flows.'
 ```
 
 # Readable Flow State Model
@@ -27,7 +27,7 @@ Given a current state and an event, the next state is uniquely determined. No am
 
 ### Visualizable
 
-Statecharts can be rendered as diagrams, making complex workflows immediately understandable.
+Statecharts can be rendered as diagrams, making complex flows immediately understandable.
 
 ### Explainable
 
@@ -46,7 +46,7 @@ States represent the condition of the system at a given point in time. Each stat
 - **on_exit**: Actions executed when leaving the state
 
 ```yaml
-workflow:
+flow:
   states:
     - name: idle
       on_enter:
@@ -130,3 +130,11 @@ states:
       - name: fetch_data
       - name: prepare_output
 ```
+
+## Structure
+
+This document serves as an index for the v2 requirements:
+
+| Document | Description |
+|----------|-------------|
+| `020_requi_ulid_creation.md` | ULID creation specifications for user inputs |

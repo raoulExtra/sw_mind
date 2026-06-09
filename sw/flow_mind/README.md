@@ -3,14 +3,14 @@ title: 'README: Flow Mind'
 tags:
 - flow
 - flow_mind
-- workflow
+- flow
 - agent
 - state_machine
 persona: kilo_extension
 status: active
 version: V00.15.00
 updated: 2026-06-08
-summary: 'Hybrid workflow engine for managing agents with verifiable state machines.'
+summary: 'Hybrid flow engine for managing agents with verifiable state machines.'
 ```
 # Flow Mind
 
@@ -26,7 +26,7 @@ conventions: README follows `reuses/conventions/40_conv_readme_content.md` and `
 sw/flow_mind/
 ├── README.md
 ├── guidelines/
-├── v1/                      # Core workflow engine (specifications + implementation)
+├── v1/                      # Core flow engine (specifications + implementation)
 │   ├── README.md
 │   ├── requi/
 │   │   ├── 010_requi_oo_aspects.md      # Index for OO specifications
@@ -37,14 +37,14 @@ sw/flow_mind/
 │   │   ├── 050_requi_interfaces.md       # Interface contracts
 │   │   ├── 060_requi_tests.md            # Testing requirements
 │   │   ├── 080_glossary.md               # Glossary of terms
-│   │   └── 090_examples.md               # YAML workflow examples
+│   │   └── 090_examples.md               # YAML flow examples
 │   ├── res/
-│   │   └── example_workflow.yaml         # Example workflow
+│   │   └── example_flow.yaml         # Example flow
 │   ├── src/
 │   │   └── ts/
 │   │       ├── fm_cli.ts                 # CLI implementation
 │   │       └── tests/
-│   │           └── unit/workflow.test.ts # Unit tests
+│   │           └── unit/flow.test.ts # Unit tests
 │   └── guidelines/
 │       └── 010_guidl_flow_mind_impl.md
 └── v2/                      # Code-level implementation
@@ -77,7 +77,7 @@ sw/flow_mind/
 | V00.08.00 | 2026-06-08 | ai(kilo laguna) | Added YAML format specification |
 | V00.09.00 | 2026-06-08 | ai(kilo laguna) | Restructured: split v1 OO specs, added v2 implementation |
 | V00.10.00 | 2026-06-08 | ai(kilo laguna) | Added v1 testing requirements |
-| V00.11.00 | 2026-06-08 | ai(kilo laguna) | Added acceptance criteria, glossary, and workflow examples |
+| V00.11.00 | 2026-06-08 | ai(kilo laguna) | Added acceptance criteria, glossary, and flow examples |
 | V00.12.00 | 2026-06-08 | ai(kilo laguna) | Added learning guide for requirements |
 | V00.13.00 | 2026-06-08 | ai(kilo laguna) | Added Test chapters per convention |
 | V00.14.00 | 2026-06-08 | ai(kilo laguna) | Final version bump |

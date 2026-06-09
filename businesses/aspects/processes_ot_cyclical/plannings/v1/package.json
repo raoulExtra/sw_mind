@@ -1,0 +1,14 @@
+{
+  "name": "gantt-generator",
+  "version": "1.0.0",
+  "description": "Gantt chart generator",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "dev": "vitest"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.0",
+    "xstate": "^5.0.0"
+  }
+}

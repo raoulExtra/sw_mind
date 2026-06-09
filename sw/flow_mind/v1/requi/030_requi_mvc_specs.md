@@ -10,7 +10,7 @@ persona: kilo_extension
 status: active
 version: V00.03.00
 updated: 2026-06-08
-summary: 'Model View Controller specifications for Flow Mind v1 workflow engine.'
+summary: 'Model View Controller specifications for Flow Mind v1 flow engine.'
 ```
 
 # Requirements: Flow Mind v1 MVC Specifications
@@ -24,12 +24,9 @@ Text-based MVC specifications for Flow Mind v1 components.
 ## Functional Requirements
 
 ### Model View Controller (Text-Based)
-- [ ] **FR-FM-OO-06** Model: workflow state and data representation
-  - *Acceptance*: State includes current_step, data_fields, and transition_history
-- [ ] **FR-FM-OO-07** View: CLI output formatting specifications
-  ```yaml
-  # Status View Example
-  workflow: my_workflow
+- [ ] **FR-FM-OO-06** Model: flow state and data representation
+
+  flow: my_flow
   status: running
   current_step: verify_output
   step_status: pending
@@ -39,7 +36,7 @@ Text-based MVC specifications for Flow Mind v1 components.
     - step: plan -> in_progress
     - step: verify -> pending
   ```
-- [ ] **FR-FM-OO-08** Controller: command routing and workflow execution rules
+- [ ] **FR-FM-OO-08** Controller: command routing and flow execution rules
   - *Acceptance*: Commands include start, stop, status, next, history
 
 ---
