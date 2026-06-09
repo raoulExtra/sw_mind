@@ -96,7 +96,7 @@ function main(): void {
     process.exit(1)
   }
 
-  const flowPath = path.resolve(__dirname, '../../res/v1', args[0])
+  const flowPath = path.resolve(process.cwd(), 'sw/flow_mind/res/v1', args[0])
   const command = args[1]
   const statePath = 'state.json'
 
