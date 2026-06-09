@@ -21,6 +21,15 @@ summary: 'CLI commands for Flow Mind v2 flow evaluation, simulation, and state m
 
 CLI commands for Flow Mind v2 that support guard evaluation, flow execution, state simulation, and transition computation.
 
+## Core Entities
+
+| Entity | Description |
+|--------|-------------|
+| **CLI** | Command-line interface for flow operations |
+| **Flow** | State machine definition |
+| **Guard** | Condition for transition |
+| **Signal** | Event that triggers transition |
+
 ## Functional Requirements
 
 ### Flow Loading
@@ -58,32 +67,47 @@ CLI commands for Flow Mind v2 that support guard evaluation, flow execution, sta
 flow <command> [options]
 
 Commands:
-  load <path>           Load flow from file
+  load <path>              Load flow from file
   eval-guard <flow> <guard>   Evaluate guard condition
-  run <flow>            Run flow with signal
-  next-state <flow> <state>  Show next state
+  run <flow>               Run flow with signal
+  next-state <flow> <state>   Show next state
   simulate <flow> <transition>  Simulate transition
 ```
 
 ## Examples
 
 ### Evaluate a guard
+
 ```bash
 flow eval-guard my_flow "input.value == 'start'"
 # Output: true
 ```
 
 ### Run a flow with signal
+
 ```bash
 flow run my_flow --signal user_input --payload '{"value": "start"}'
 # Output: Flow completed, next state: processing
 ```
 
 ### Show next state
+
 ```bash
 flow next-state my_flow init --signal user_input
 # Output: next_state: processing
 ```
+
+## Test
+
+- [ ] **TEST-CLI-01** Unit tests for flow loading
+- [ ] **TEST-CLI-02** Unit tests for guard evaluation
+- [ ] **TEST-CLI-03** Unit tests for flow execution
+- [ ] **TEST-CLI-04** Unit tests for state management
+- [ ] **TEST-CLI-05** Unit tests for transition simulation
+
+## See Also
+
+- Readable Flow State Model: `sw/flow_mind/v2/requi/010_readable_flow_state_model.md`
 
 ## Change History
 

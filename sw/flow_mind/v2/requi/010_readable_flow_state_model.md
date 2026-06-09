@@ -1,25 +1,42 @@
 ```yaml
-title: 'Readable Flow State Model'
+title: 'Requirements: Flow Mind v2 Readable Flow State Model'
 tags:
 - flow_mind
+- requirements
 - state_model
 - readable
 - states
 - transitions
 - guards
 - actions
+- v2
 persona: product_manager
 status: active
 version: V00.01.00
-updated: 2026-06-08
+updated: 2026-06-09
+requi_id: REQUI-FM-V2-010
 summary: 'A clean, human-readable machine model for Flow Mind flows.'
 ```
 
 # Readable Flow State Model
 
-## Formal Semantics
+> Version: V00.01.00
 
-Statecharts provide formal semantics that humans can understand:
+## Overview
+
+Statecharts provide formal semantics that humans can understand.
+
+## Core Entities
+
+| Entity | Description |
+|--------|-------------|
+| **State** | Condition of the system at a given point in time |
+| **Transition** | Directed edge between states with optional Guard |
+| **Signal** | External or internal event that triggers transitions |
+| **Guard** | Condition that must be true for transition to fire |
+| **Action** | Unit of work executed during state lifecycle |
+
+## Formal Semantics
 
 ### Deterministic
 
@@ -131,10 +148,30 @@ states:
       - name: prepare_output
 ```
 
-## Structure
+## Functional Requirements
 
-This document serves as an index for the v2 requirements:
+- [ ] **FR-FM-V2-01** Flow definition with states, transitions, and guards
+  - *Acceptance*: YAML file defines flow with at least 3 states and 2 transitions
+- [ ] **FR-FM-V2-02** State representation with encapsulated data and transitions
+  - *Acceptance*: State includes data fields and list of valid next states
+- [ ] **FR-FM-V2-03** Guard condition evaluation
+  - *Acceptance*: Guards evaluate boolean expressions against context
 
-| Document | Description |
-|----------|-------------|
-| `020_requi_ulid_creation.md` | ULID creation specifications for user inputs |
+## Test
+
+- [ ] **TEST-FM-V2-01** Unit tests for flow definition parsing
+- [ ] **TEST-FM-V2-02** Unit tests for state representation
+- [ ] **TEST-FM-V2-03** Unit tests for guard evaluation
+
+## See Also
+
+- Flow Mind v2 Requirements Index: `sw/flow_mind/v2/requi/010_readable_flow_state_model.md`
+- ULID Creation: `sw/flow_mind/v2/requi/020_requi_ulid_creation.md`
+- User Input: `sw/flow_mind/v2/requi/030_requi_user_input.md`
+- CLI Commands: `sw/flow_mind/v2/requi/040_requi_cli_commands.md`
+
+## Change History
+
+| Version | Date | Author | Reason |
+|---------|------|--------|--------|
+| V00.01.00 | 2026-06-09 | ai(kilo laguna) | Initial readable flow state model requirements |

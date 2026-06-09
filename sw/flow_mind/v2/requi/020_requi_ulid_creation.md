@@ -11,6 +11,7 @@ persona: kilo_extension
 status: active
 version: V00.01.00
 updated: 2026-06-09
+requi_id: REQUI-FM-V2-020
 summary: 'Specifications for generating ULIDs for user input artifacts.'
 ```
 
@@ -22,9 +23,14 @@ summary: 'Specifications for generating ULIDs for user input artifacts.'
 
 User inputs must be assigned unique, lexicographically sortable identifiers that are collision-resistant and time-ordered. ULIDs provide these properties while remaining URL-safe and database-friendly.
 
-## Functional Requirements
+## Core Entities
 
-### Core Domain Model
+| Entity | Description |
+|--------|-------------|
+| **ULID** | Unique, lexicographically sortable identifier |
+| **User Input** | Artifact requiring unique identifier |
+
+## Functional Requirements
 
 - [ ] **FR-ULID-01** Generate ULID for each user input artifact
   - *Acceptance*: ULID is 26 characters, Crockford's Base32 encoded, lexicographically sortable

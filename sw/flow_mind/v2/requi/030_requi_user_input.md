@@ -1,81 +1,60 @@
-the better-sqlite3 db is in res/env.db
+```yaml
+title: 'Requirements: User Input Handling'
+tags:
+- flow_mind
+- requirements
+- user-input
+- sqlite
+- v2
+persona: kilo_extension
+status: active
+version: V00.01.00
+updated: 2026-06-09
+requi_id: REQUI-FM-V2-030
+summary: 'Specifications for handling user inputs with SQLite persistence.'
+```
 
-1. A ULID generator (or UUID, but ULID is better)
-You need a globally unique, sortable ID for each user input.
+# Requirements: User Input Handling
 
-In TS:
+> Version: V00.01.00
 
-ts
-import { ulid } from "ulid";
+## Overview
 
-const id = ulid();
-This ID becomes:
+User inputs must be stored with unique IDs and persisted via write intents.
 
-the primary key for the user input
+## Core Entities
 
-the intent_id in write_intent_queue
+| Entity | Description |
+|--------|-------------|
+| **User Input** | Artifact submitted by user |
+| **ULID** | Unique identifier for user input |
+| **Write Intent Queue** | SQLite table for pending changes |
+| **Commit-Agent** | Handler that processes write intents |
 
-the reference in audit_log
+## Functional Requirements
 
-the reference in domain tables
+- [ ] **FR-UI-01** ULID generator for unique identifiers
+  - *Acceptance*: ULID is 26 characters, Crockford's Base32 encoded
+- [ ] **FR-UI-02** SQLite client for write_intent_queue
+  - *Acceptance*: Can INSERT with parameterized queries
+- [ ] **FR-UI-03** Domain table for user inputs
+  - *Acceptance*: Table has id TEXT PRIMARY KEY, text TEXT, created_at TEXT
+- [ ] **FR-UI-04** Commit-agent handler for user_input intents
+  - *Acceptance*: Processes pending write intents and applies changes
 
-This is the only unique ID you need.
+## Test
 
-⭐ 2. A SQLite client that can INSERT into write_intent_queue
-Your agent never writes directly to domain tables.
+- [ ] **TEST-UI-01** Unit tests for ULID generation in user input context
+- [ ] **TEST-UI-02** Unit tests for SQLite write intent queue operations
+- [ ] **TEST-UI-03** Unit tests for commit-agent handler
 
-It only writes write intents.
+## See Also
 
-Example:
+- ULID Creation: `sw/flow_mind/v2/requi/020_requi_ulid_creation.md`
+- Readable Flow State Model: `sw/flow_mind/v2/requi/010_readable_flow_state_model.md`
 
-ts
-await db.run(
-  `INSERT INTO write_intent_queue (id, agent_id, payload_json, state)
-   VALUES (?, ?, ?, 'pending')`,
-  [ulid(), "user-input-agent", JSON.stringify({ text: userInput })]
-);
-That’s it.
+## Change History
 
-The commit agent will:
-
-pick it up
-
-validate
-
-apply the write
-
-log it
-
-mark it committed
-
-Your agent stays simple.
-
-⭐ 3. A schema entry for user input in your domain tables
-You need a domain table where the commit agent will write the actual data.
-
-Example:
-
-sql
-CREATE TABLE user_inputs (
-  id TEXT PRIMARY KEY,
-  text TEXT NOT NULL,
-  created_at TEXT DEFAULT CURRENT_TIMESTAMP
-);
-The commit agent will insert into this table when processing the write intent.
-
-The agent_for_commit is described in sw/sql_mind/requi.
-
-⭐ Putting it together (the minimal requirements)
-✔ A ULID generator
-To create unique IDs.
-
-✔ A SQLite connection to env.db
-To insert write intents.
-
-✔ A domain table for user inputs
-Where the commit agent writes the final data.
-
-✔ A commit‑agent handler for “user_input” intents
-So it knows how to apply them.
-
-That’s all you need.
+| Version | Date | Author | Reason |
+|---------|------|--------|--------|
+| V00.01.00 | 2026-06-09 | ai(kilo laguna) | Initial user input requirements |
