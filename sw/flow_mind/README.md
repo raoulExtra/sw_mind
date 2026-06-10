@@ -4,17 +4,17 @@ tags:
 - flow
 - flow_mind
 - flow
-- agent
+- executor
 - state_machine
 persona: kilo_extension
 status: active
 version: V00.15.00
 updated: 2026-06-08
-summary: 'Hybrid flow engine for managing agents with verifiable state machines.'
+summary: 'Hybrid flow engine for managing executors with verifiable state machines.'
 ```
 # Flow Mind
 
-This project provides a hybrid (work)flow engine for managing agents with verifiable state machines. The system combines flow orchestration with model-based planning and independent verification. It is designed for CLI execution with file-based state persistence.
+This project provides a hybrid (work)flow engine for managing executors with verifiable state machines. The system combines flow orchestration with model-based planning and independent verification. It is designed for CLI execution with file-based state persistence.
 
 ## Content Info
 

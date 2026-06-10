@@ -2,30 +2,30 @@
 title: 'README: Flow Mind v6 - Multi-Executor Orchestration'
 tags:
 - flow_mind
-- multi-agent
+- multi-executor
 - orchestration
-- agent-actions
-- agent-memory
+- executor-actions
+- executor-memory
 - messaging
 - real-time
 persona: architect
 status: active
 version: V00.01.00
 updated: 2026-06-10
-summary: 'Multi-agent orchestration with real-time signal handling and environment interaction.'
+summary: 'Multi-executor orchestration with real-time signal handling and environment interaction.'
 ```
 
 # Flow Mind v6 - Multi-Executor Orchestration
 
 ## Overview
 
-Flow Mind v6 introduces advanced multi-agent orchestration capabilities with real-time signal handling and environment interaction.
+Flow Mind v6 introduces advanced multi-executor orchestration capabilities with real-time signal handling and environment interaction.
 
 ## Features
 
 ### Executor Actions
 - **Declarative action definitions** in flow YAML
-- **Extensible action types**: log, agent, http, emit, custom
+- **Extensible action types**: log, executor, http, emit, custom
 - **Action chaining** and conditional execution
 - **Parallel action execution** within states
 
@@ -33,19 +33,19 @@ Flow Mind v6 introduces advanced multi-agent orchestration capabilities with rea
 - **Persistent context storage** across flow executions
 - **Key-value context management** with versioning
 - **Memory snapshots** for rollback capability
-- **Shared memory spaces** for multi-agent coordination
+- **Shared memory spaces** for multi-executor coordination
 
 ### Executor-to-Executor Messaging
-- **Signal-based communication** between agents
+- **Signal-based communication** between executors
 - **Message queues** with priority handling
 - **Broadcast and unicast** messaging patterns
 - **Message acknowledgment** and retry mechanisms
 
 ### Multi-Executor Orchestration
 - **Executor capability declarations** with ambiguity thresholds
-- **Dynamic agent selection** based on context
+- **Dynamic executor selection** based on context
 - **Executor collaboration flows** with handoff protocols
-- **Orchestration graphs** for complex agent interactions
+- **Orchestration graphs** for complex executor interactions
 
 ### Real-Time Signal Handling
 - **Event-driven transitions** via `on:` field
@@ -83,7 +83,7 @@ Flow Mind v6 introduces advanced multi-agent orchestration capabilities with rea
 
 ```yaml
 flow:
-  id: multi_agent_demo
+  id: multi_executor_demo
   name: "Multi-Executor Demo"
   start_state: init
   signals:
@@ -91,14 +91,14 @@ flow:
       schema:
         type: object
         properties:
-          agent_id: { type: string }
+          executor_id: { type: string }
           task: { type: string }
   states:
     - name: init
       on_enter:
         - emit: task_assigned
           data:
-            agent_id: "planner"
+            executor_id: "planner"
             task: "create_plan"
       transitions:
         - to: planning

@@ -37,7 +37,7 @@ Conventions: README follows `reuses/conventions/40_conv_readme_content.md`, vers
 
 ### Object-Oriented Design
 - Composition over inheritance for component integration
-- Factory pattern for flow and agent instantiation
+- Factory pattern for flow and executor instantiation
 - Observer pattern for state change notifications
 - Strategy pattern for verification algorithms
 - See `sw/flow_mind/v1/requi/` for detailed requirements:

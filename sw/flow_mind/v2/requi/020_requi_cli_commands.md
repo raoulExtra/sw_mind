@@ -29,7 +29,7 @@ CLI commands for Flow Mind v2 that support guard evaluation, flow execution, sta
 | **Flow** | State machine definition |
 | **Guard** | Condition for transition |
 | **Signal** | Event that triggers transition |
-| **Shell** | External script executed instead of agent |
+| **Shell** | External script executed instead of executor |
 
 ## Functional Requirements
 
@@ -68,7 +68,7 @@ CLI commands for Flow Mind v2 that support guard evaluation, flow execution, sta
 
 ### Shell Execution
 
-- [x] **FR-FM-V2-36** Run flow with shell script instead of agent
+- [x] **FR-FM-V2-36** Run flow with shell script instead of executor
   - *Acceptance*: `flow run <flow> --shell <path>` executes shell script
   - *Acceptance*: Shell script receives flow state as JSON input
   - *Acceptance*: Returns error for invalid shell script path

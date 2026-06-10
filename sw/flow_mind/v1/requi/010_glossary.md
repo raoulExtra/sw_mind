@@ -9,7 +9,7 @@ status: active
 version: V00.04.00
 updated: 2026-06-10
 summary: 'Glossary of terms for Flow Mind v1 flow engine.'
-change: 'Replaced Executor with Executor terminology'
+change: 'Replaced Agent with Executor terminology'
 ```
 
 # Glossary: Flow Mind v1
@@ -43,4 +43,4 @@ change: 'Replaced Executor with Executor terminology'
 |---------|------|--------|--------|
 | V00.01.00 | 2026-06-08 | ai(kilo laguna) | Initial glossary |
 | V00.02.00 | 2026-06-08 | ai(kilo laguna) | Added Test chapter per convention |
-| V00.04.00 | 2026-06-10 | ai(kilo laguna) | Replaced Executor with Executor terminology |
+| V00.04.00 | 2026-06-10 | ai(kilo laguna) | Replaced Agent with Executor terminology |

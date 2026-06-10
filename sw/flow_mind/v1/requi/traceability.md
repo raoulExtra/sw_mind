@@ -15,7 +15,7 @@ This file maps requirements to tests and suggested implementation targets.
 
 - **FR-FM-OO-02** Executor capability specification with ambiguity handling
   - Test: **TEST-FM-OO-02**
-  - Example: add `requi/agent_capabilities.yaml`
+  - Example: add `requi/executor_capabilities.yaml`
   - Implementation target: `src/ts/agent/*` (IExecutor)
 
 - **FR-FM-OO-03** Verifier rule definitions with validation criteria

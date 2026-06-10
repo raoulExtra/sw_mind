@@ -4,20 +4,20 @@ tags:
 - flow_mind
 - v4
 - hybrid
-- agent
+- executor
 - verifier
 persona: architect
 status: active
 version: V00.12.00
 updated: 2026-06-10
-summary: 'Hybrid flow engine with agent-based planning and independent verification.'
+summary: 'Hybrid flow engine with executor-based planning and independent verification.'
 ```
 
 # Flow Mind v4
 
 > Version: V00.12.00
 
-Hybrid flow engine for managing agents with verifiable state machines. The system combines flow orchestration, agent-based planning, and independent verification in a CLI tool.
+Hybrid flow engine for managing executors with verifiable state machines. The system combines flow orchestration, executor-based planning, and independent verification in a CLI tool.
 
 ## Content Info
 

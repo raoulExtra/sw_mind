@@ -110,13 +110,13 @@ transitions:
 
 Actions are units of work executed during state lifecycle.
 
-- **type**: log, http, agent, verifier, custom
+- **type**: log, http, executor, verifier, custom
 - **payload**: Action-specific data
 
 ```yaml
 actions:
   - log: "Processing started"
-  - agent: generate_plan
+  - executor: generate_plan
   - http:
       method: POST
       url: /api/process

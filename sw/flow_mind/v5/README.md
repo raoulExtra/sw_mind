@@ -2,7 +2,7 @@
 
 > Version: V00.11.00
 
-Hybrid flow engine for managing agents with verifiable state machines. The system combines flow orchestration, agent-based planning, and independent verification in a CLI tool. It uses file-based state persistence for flow execution and state machine management.
+Hybrid flow engine for managing executors with verifiable state machines. The system combines flow orchestration, executor-based planning, and independent verification in a CLI tool. It uses file-based state persistence for flow execution and state machine management.
 
 ## Content Info
 

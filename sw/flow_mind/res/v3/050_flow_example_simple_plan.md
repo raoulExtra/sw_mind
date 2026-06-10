@@ -30,7 +30,7 @@ flow:
           when: always
     - name: plan
       on_enter:
-        - agent: generate_plan
+        - executor: generate_plan
       transitions:
         - to: verify
           when: plan_ready
