@@ -31,7 +31,7 @@ Adapt v1 interfaces to enable clean reuse by v2 while maintaining backward compa
   ```typescript
   export interface Action {
     log?: string;
-    agent?: string;
+    executor?: string;
     http?: { method: string; url: string; body?: any };
     // v2 extension: type?: string
   }
