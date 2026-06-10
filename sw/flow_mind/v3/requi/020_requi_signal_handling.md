@@ -35,5 +35,10 @@ Requirements for emitting and handling signals during flow simulation.
   - *Acceptance*: Signal handlers can be registered and invoked
 - [ ] **FR-FM-V3-SIGNAL-02** Must support typed signal schemas
   - *Acceptance*: Signal values validated against schema
+- [ ] **FR-FM-V3-SIGNAL-02a** Must support configurable timer units
+  - *Acceptance*: Timer `delay` accepts `unit` field with values: `seconds`, `minutes`, `hours`, `days`
+  - *Acceptance*: Default unit is `seconds` when not specified
+  - *Test*: Timer with `unit: hours` and `delay: 2` fires after 2 hours
+  - *Test*: Timer with `unit: days` and `delay: 1` fires after 1 day
 - [ ] **FR-FM-V3-SIGNAL-03** Must reject invalid signals and emit error signal
   - *Acceptance*: Preserves determinism and strict validation

@@ -1,0 +1,19 @@
+{
+  "name": "flow-mind-v3",
+  "version": "3.0.0",
+  "description": "Flow Mind v3 flow engine with signal handling",
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha --require ts-node/register src/ts/tests/unit/**/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.19.42",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.0.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.0.0"
+  }
+}
