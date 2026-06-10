@@ -55,8 +55,8 @@ describe('User Input Handling (FR-FM-V2-41/42/43/44)', () => {
         });
     });
     describe('FR-FM-V2-44: Commit-agent handler for user_input intents', () => {
-        it('should create CommitAgent', () => {
-            const agent = new fm_cli_v2_1.CommitAgent(null);
+        it('should create CommitExecutor', () => {
+            const agent = new fm_cli_v2_1.CommitExecutor(null);
             assert.ok(agent);
         });
     });

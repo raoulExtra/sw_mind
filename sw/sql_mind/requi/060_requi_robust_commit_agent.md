@@ -1,5 +1,5 @@
 ```yaml
-title: 'Requirements: Robust Commit Agent'
+title: 'Requirements: Robust Commit Executor'
 tags:
 - sql_mind
 - requirements
@@ -10,22 +10,22 @@ persona: kilo_extension
 status: draft
 version: V00.01.00
 updated: 2026-06-09
-summary: 'CommitAgent must handle shutdown gracefully, validate SQL, and integrate audit logging.'
+summary: 'CommitExecutor must handle shutdown gracefully, validate SQL, and integrate audit logging.'
 ```
 
-# Requirements: Robust Commit Agent
+# Requirements: Robust Commit Executor
 
 > Version: V00.01.00
 
 ## Overview
 
-CommitAgent needs reliability improvements for production use: graceful shutdown, SQL safety, audit integration, and correct drain behavior.
+CommitExecutor needs reliability improvements for production use: graceful shutdown, SQL safety, audit integration, and correct drain behavior.
 
 ## Functional Requirements
 
 ### Shutdown Handling
 
-- [x] **REQ-SHUTDOWN-01** CommitAgent.close() must wake blocked queue.pop()
+- [x] **REQ-SHUTDOWN-01** CommitExecutor.close() must wake blocked queue.pop()
   - *Acceptance*: Calling close() on a blocked agent resolves drain() immediately
 - [x] **REQ-SHUTDOWN-02** AsyncQueue must support close() that wakes blocked pop()
   - *Acceptance*: close() resolves any waiting pop() with a sentinel value
@@ -39,7 +39,7 @@ CommitAgent needs reliability improvements for production use: graceful shutdown
 
 ### Audit Integration
 
-- [x] **REQ-AUDIT-01** CommitAgent must accept optional AuditLog dependency
+- [x] **REQ-AUDIT-01** CommitExecutor must accept optional AuditLog dependency
   - *Acceptance*: Constructor accepts AuditLog instance
 - [x] **REQ-AUDIT-02** Each commit must be logged before execution
   - *Acceptance*: AuditLog.log() called with intent details before processing
@@ -56,7 +56,7 @@ CommitAgent needs reliability improvements for production use: graceful shutdown
 - [x] **REQ-SYS-01** End-to-end flow from intent submission to database persistence
   - *Acceptance*: Intent submitted via CLI → written to database → verified via query
 - [x] **REQ-SYS-02** Audit log persists across agent restarts
-  - *Acceptance*: Audit entries survive CommitAgent.close() and new instance creation
+  - *Acceptance*: Audit entries survive CommitExecutor.close() and new instance creation
 - [x] **REQ-SYS-03** Graceful shutdown preserves pending writes
   - *Acceptance*: Pending intents processed before exit when close() called
 

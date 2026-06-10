@@ -4,14 +4,14 @@ Review Date: 2026.06.09
 Main verdict: good minimal prototype, not production-safe yet.
 
 Critical findings
-CommitAgent.close() can hang the loop
+CommitExecutor.close() can hang the loop
 close() only sets running = false, but the loop may be blocked forever on queue.pop().
 Fix: add cancellation/poison-pill support to AsyncQueue.
 Rollback can throw
-In CommitAgent.ts:63, ROLLBACK is always called. If BEGIN failed or no transaction is active, rollback may throw and mask the real error.
+In CommitExecutor.ts:63, ROLLBACK is always called. If BEGIN failed or no transaction is active, rollback may throw and mask the real error.
 Track inTransaction.
 No audit-before-commit integration
-AuditLog exists, but CommitAgent does not use it.
+AuditLog exists, but CommitExecutor does not use it.
 This contradicts the apparent requirement: “write intents must be stored before application.”
 SQL execution is too permissive
 intent.sql is arbitrary SQL.

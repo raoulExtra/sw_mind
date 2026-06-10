@@ -5,6 +5,8 @@ tags:
 - state_machine
 - requirements
 - persistence
+- v4
+- executor
 persona: kilo_extension
 status: active
 version: V00.12.00

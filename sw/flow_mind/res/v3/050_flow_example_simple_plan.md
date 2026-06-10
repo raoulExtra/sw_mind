@@ -19,6 +19,7 @@ See also: [Base Flow Template](./010_flow_base.md)
 flow:
   id: simple_plan
   name: "Simple Plan Execution"
+  extends: flow_base_v2
   start_state: init
   states:
     - name: init

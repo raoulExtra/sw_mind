@@ -1,5 +1,5 @@
 import * as assert from 'assert'
-import { generateULID, WriteIntentQueue, UserInputTable, CommitAgent } from '../../fm_cli_v2'
+import { generateULID, WriteIntentQueue, UserInputTable, CommitExecutor } from '../../fm_cli_v2'
 
 describe('User Input Handling (FR-FM-V2-41/42/43/44)', () => {
   describe('FR-FM-V2-41: ULID generator for unique identifiers', () => {
@@ -24,8 +24,8 @@ describe('User Input Handling (FR-FM-V2-41/42/43/44)', () => {
   })
 
   describe('FR-FM-V2-44: Commit-agent handler for user_input intents', () => {
-    it('should create CommitAgent', () => {
-      const agent = new CommitAgent(null)
+    it('should create CommitExecutor', () => {
+      const agent = new CommitExecutor(null)
       assert.ok(agent)
     })
   })

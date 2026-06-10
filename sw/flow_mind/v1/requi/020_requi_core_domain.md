@@ -49,8 +49,8 @@ Core domain model specifications for Flow Mind v1 components. These can be simul
 ### Core Domain Model
 - [ ] **FR-FM-OO-01** Flow definition with states, transitions, and permissions
   - *Acceptance*: YAML file defines flow with at least 3 states and 2 transitions
-- [ ] **FR-FM-OO-02** Agent capability specification with ambiguity handling
-  - *Acceptance*: Agent config specifies max ambiguity threshold (0.0-1.0)
+- [ ] **FR-FM-OO-02** Executor capability specification with ambiguity handling
+  - *Acceptance*: Executor config specifies max ambiguity threshold (0.0-1.0)
 - [ ] **FR-FM-OO-03** Verifier rule definitions with validation criteria
   - *Acceptance*: Each verifier rule has named criteria and expected result type
 - [ ] **FR-FM-OO-04** State representation with encapsulated data and transitions
@@ -61,7 +61,7 @@ Core domain model specifications for Flow Mind v1 components. These can be simul
 ## Test
 
 - [ ] **TEST-FM-OO-01** Unit tests for flow definition parsing and validation
-- [ ] **TEST-FM-OO-02** Unit tests for agent capability specification validation
+- [ ] **TEST-FM-OO-02** Unit tests for executor capability specification validation
 - [ ] **TEST-FM-OO-03** Unit tests for verifier rule definitions
 - [ ] **TEST-FM-OO-04** Unit tests for state representation and transitions
 - [ ] **TEST-FM-OO-05** Unit tests for artifact class schemas

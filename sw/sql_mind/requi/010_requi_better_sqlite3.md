@@ -1,5 +1,5 @@
 ```yaml
-title: 'Requirements: Better-SQLite3 for In-Memory Agent Exchange'
+title: 'Requirements: Better-SQLite3 for In-Memory Executor Exchange'
 tags:
 - sql_mind
 - requirements
@@ -14,7 +14,7 @@ updated: 2026-06-09
 summary: 'Use better-sqlite3 for in-memory agent exchange with file-based audit trail.'
 ```
 
-# Requirements: Better-SQLite3 for In-Memory Agent Exchange
+# Requirements: Better-SQLite3 for In-Memory Executor Exchange
 
 > Version: V00.01.00
 
@@ -26,7 +26,7 @@ Use better-sqlite3 to enable agents to exchange data via in-memory databases whi
 
 ### In-Memory Exchange
 
-- [ ] **FR-BSQL-01** Agents must use in-memory SQLite for fast data exchange
+- [ ] **FR-BSQL-01** Executors must use in-memory SQLite for fast data exchange
   - *Acceptance*: Database created with `:memory:` or `file::memory:?cache=shared`
 - [ ] **FR-BSQL-02** In-memory databases must support concurrent access
   - *Acceptance*: Shared cache mode allows multiple connections
@@ -44,7 +44,7 @@ Use better-sqlite3 to enable agents to exchange data via in-memory databases whi
 
 ### Data Flow
 
-- [ ] **FR-BSQL-07** Agents read/write to in-memory database
+- [ ] **FR-BSQL-07** Executors read/write to in-memory database
   - *Acceptance*: Zero I/O latency for inter-agent communication
 - [ ] **FR-BSQL-08** Audit sink writes to file database
   - *Acceptance*: Separate connection to file-based database
@@ -74,16 +74,16 @@ Use better-sqlite3 to enable agents to exchange data via in-memory databases whi
 
 ## See Also
 
-- Agent Write Queue: `020_requi_agent_writes_ot_mult.md`
+- Executor Write Queue: `020_requi_agent_writes_ot_mult.md`
 - SQLite Rationale: `sw/sql_mind/rationales/010_ratio_sqlite.md`
 - Hidden Simulations: `sw/flow_mind/v99/requi/010_requi_hidden_simulations.md`
 
 ## Architecture
 
 ```
-Agent 1 ──┐
-Agent 2 ──┼──> In-Memory DB (fast exchange)
-Agent N ──┘
+Executor 1 ──┐
+Executor 2 ──┼──> In-Memory DB (fast exchange)
+Executor N ──┘
                     │
                     ▼
               Audit Sink ──> File DB (persistent audit)

@@ -43,7 +43,7 @@ v4/
 ## Requirements
 
 - Flow engine for permissions and state control
-- Agent for ambiguity handling and planning
+- Executor for ambiguity handling and planning
 - Verifier for independent output checking
 - CLI interface with file-based state persistence
 

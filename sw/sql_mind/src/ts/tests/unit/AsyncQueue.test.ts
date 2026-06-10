@@ -1,7 +1,7 @@
 import { AsyncQueue } from '../../AsyncQueue';
 
 describe('AsyncQueue', () => {
-  describe('FR-WRITEQ-01: Agents must send write requests to a centralized queue', () => {
+  describe('FR-WRITEQ-01: Executors must send write requests to a centralized queue', () => {
     it('should push and pop items in FIFO order', async () => {
       const queue = new AsyncQueue<number>();
       

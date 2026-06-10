@@ -1,11 +1,11 @@
-# AI Agents
+# AI Executors
 
 Pre-built and custom AI agents for work automation.
 
 ## Types
-- Research Agents
-- Reporting Agents
-- Insights Agents
+- Research Executors
+- Reporting Executors
+- Insights Executors
 - Meeting Assistants
 - Process Optimizers
 - Custom agents

@@ -33,7 +33,7 @@ var __importStar = (this && this.__importStar) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CommitAgent = exports.UserInputTable = exports.WriteIntentQueue = void 0;
+exports.CommitExecutor = exports.UserInputTable = exports.WriteIntentQueue = void 0;
 exports.createEmptyContext = createEmptyContext;
 exports.getContext = getContext;
 exports.setContext = setContext;
@@ -149,11 +149,11 @@ class UserInputTable {
     insert(input) { return input; }
 }
 exports.UserInputTable = UserInputTable;
-class CommitAgent {
+class CommitExecutor {
     constructor(db) { this.db = db; }
     process() { return true; }
 }
-exports.CommitAgent = CommitAgent;
+exports.CommitExecutor = CommitExecutor;
 function loadFlow(filePath) {
     const content = fs.readFileSync(filePath, 'utf-8');
     return parseFlowFile(content);

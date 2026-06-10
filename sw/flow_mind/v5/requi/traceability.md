@@ -40,7 +40,7 @@ This document maps v4 functional requirements to corresponding tests and impleme
 - **FR-FM-V4-12** AsyncQueue semantics
   - Test: **TEST-FM-V4-12**
   - File: `sw/flow_mind/v4/requi/040_requi_tests.md`
-- **FR-FM-V4-13** CommitAgent lifecycle and safety
+- **FR-FM-V4-13** CommitExecutor lifecycle and safety
   - Test: **TEST-FM-V4-13**
   - File: `sw/flow_mind/v4/requi/040_requi_tests.md`
 - **FR-FM-V4-14** SQL Builder safety and correctness

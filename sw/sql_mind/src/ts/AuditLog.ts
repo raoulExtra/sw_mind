@@ -35,7 +35,7 @@ export class AuditLog {
     );
   }
 
-  async findByAgentId(agentId: string): Promise<any[]> {
+  async findByExecutorId(agentId: string): Promise<any[]> {
     const stmt = this.db.prepare('SELECT * FROM audit_log WHERE agent_id = ? ORDER BY timestamp');
     return stmt.all(agentId);
   }

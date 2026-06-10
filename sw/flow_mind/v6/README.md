@@ -1,5 +1,5 @@
 ```yaml
-title: 'README: Flow Mind v6 - Multi-Agent Orchestration'
+title: 'README: Flow Mind v6 - Multi-Executor Orchestration'
 tags:
 - flow_mind
 - multi-agent
@@ -15,7 +15,7 @@ updated: 2026-06-10
 summary: 'Multi-agent orchestration with real-time signal handling and environment interaction.'
 ```
 
-# Flow Mind v6 - Multi-Agent Orchestration
+# Flow Mind v6 - Multi-Executor Orchestration
 
 ## Overview
 
@@ -23,28 +23,28 @@ Flow Mind v6 introduces advanced multi-agent orchestration capabilities with rea
 
 ## Features
 
-### Agent Actions
+### Executor Actions
 - **Declarative action definitions** in flow YAML
 - **Extensible action types**: log, agent, http, emit, custom
 - **Action chaining** and conditional execution
 - **Parallel action execution** within states
 
-### Agent Memory
+### Executor Memory
 - **Persistent context storage** across flow executions
 - **Key-value context management** with versioning
 - **Memory snapshots** for rollback capability
 - **Shared memory spaces** for multi-agent coordination
 
-### Agent-to-Agent Messaging
+### Executor-to-Executor Messaging
 - **Signal-based communication** between agents
 - **Message queues** with priority handling
 - **Broadcast and unicast** messaging patterns
 - **Message acknowledgment** and retry mechanisms
 
-### Multi-Agent Orchestration
-- **Agent capability declarations** with ambiguity thresholds
+### Multi-Executor Orchestration
+- **Executor capability declarations** with ambiguity thresholds
 - **Dynamic agent selection** based on context
-- **Agent collaboration flows** with handoff protocols
+- **Executor collaboration flows** with handoff protocols
 - **Orchestration graphs** for complex agent interactions
 
 ### Real-Time Signal Handling
@@ -65,11 +65,11 @@ Flow Mind v6 introduces advanced multi-agent orchestration capabilities with rea
 ┌─────────────────────────────────────────────────┐
 │              Flow Mind v6 Engine                │
 ├─────────────────────────────────────────────────┤
-│  Signal Router  │  Agent Orchestrator  │  State Manager  │
+│  Signal Router  │  Executor Orchestrator  │  State Manager  │
 ├─────────────────────────────────────────────────┤
 │                                                 │
 │  ┌─────────┐  ┌─────────┐  ┌─────────┐       │
-│  │ Agent 1 │  │ Agent 2 │  │ Agent 3 │  ...  │
+│  │ Executor 1 │  │ Executor 2 │  │ Executor 3 │  ...  │
 │  └─────────┘  └─────────┘  └─────────┘       │
 │       │             │             │           │
 │       └─────────────┼─────────────┘           │
@@ -84,7 +84,7 @@ Flow Mind v6 introduces advanced multi-agent orchestration capabilities with rea
 ```yaml
 flow:
   id: multi_agent_demo
-  name: "Multi-Agent Demo"
+  name: "Multi-Executor Demo"
   start_state: init
   signals:
     - name: task_assigned

@@ -13,10 +13,10 @@ This file maps requirements to tests and suggested implementation targets.
   - Example: `sw/flow_mind/res/v1/example_flow.yaml`
   - Implementation target: `src/ts/fm_cli.ts` -> `loadFlow()` / `Flow` model
 
-- **FR-FM-OO-02** Agent capability specification with ambiguity handling
+- **FR-FM-OO-02** Executor capability specification with ambiguity handling
   - Test: **TEST-FM-OO-02**
   - Example: add `requi/agent_capabilities.yaml`
-  - Implementation target: `src/ts/agent/*` (IAgent)
+  - Implementation target: `src/ts/agent/*` (IExecutor)
 
 - **FR-FM-OO-03** Verifier rule definitions with validation criteria
   - Test: **TEST-FM-OO-03**

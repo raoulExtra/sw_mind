@@ -6,6 +6,8 @@ tags:
 - oo
 - architecture
 - v4
+- executor
+- verifier
 persona: kilo_extension
 status: active
 version: V00.12.00
@@ -25,7 +27,7 @@ Code-level object-oriented design requirements for Flow Mind v4 architecture com
 
 ### OO Architecture
 - [ ] **FR-FM-OO-01** Flow engine as abstract base class with concrete implementations
-- [ ] **FR-FM-OO-02** Agent as interface with multiple strategy implementations
+- [ ] **FR-FM-OO-02** Executor as interface with multiple strategy implementations
 - [ ] **FR-FM-OO-03** Verifier as pluggable components with common interface
 - [ ] **FR-FM-OO-04** State classes with encapsulated state data and transitions
 - [ ] **FR-FM-OO-05** Artifact classes for plans, outputs, and verification results

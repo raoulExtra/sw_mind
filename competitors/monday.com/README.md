@@ -23,7 +23,7 @@ monday.com is an AI-powered work operating system that provides a flexible platf
 - [Service](aspects/product-offerings/service/) - IT and support
 
 ### Key Features
-- [AI Agents](aspects/key-features/ai-agents/) - Pre-built and custom AI agents
+- [AI Executors](aspects/key-features/ai-agents/) - Pre-built and custom AI agents
 - [Dashboards](aspects/key-features/dashboards/) - Visualization and reporting
 - [Integrations](aspects/key-features/integrations/) - Third-party connectivity
 - [Automations](aspects/key-features/automations/) - Workflow automation

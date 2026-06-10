@@ -19,7 +19,7 @@ summary: 'Glossary of terms for Flow Mind v1 flow engine.'
 
 | Term | Definition |
 |------|------------|
-| **Agent** | Component that handles ambiguity and planning operations |
+| **Executor** | Component that handles ambiguity and planning operations |
 | **Artifact** | Output from flow execution (plan, output, or verification result) |
 | **State** | Representation of flow execution status |
 | **Transition** | Movement from one state to another |

@@ -1,4 +1,5 @@
 ```yaml
+name: flow_base_v2
 title: 'Flow Base Template'
 tags:
 - flow_mind

@@ -38,7 +38,7 @@ The project must achieve 95% code coverage for all source files to ensure compre
 - [ ] **REQ-FILE-02** WriteIntent.ts: Cover all builder methods (insert, update, delete, select)
 - [ ] **REQ-FILE-03** cli.ts: Cover all argument combinations (--db, -d, missing args)
 - [ ] **REQ-FILE-04** Database.ts: Cover error handling paths
-- [ ] **REQ-FILE-05** CommitAgent.ts: Cover rollback error handling
+- [ ] **REQ-FILE-05** CommitExecutor.ts: Cover rollback error handling
 - [ ] **REQ-FILE-06** AuditLog.ts: Already at 100%
 
 ### Test Quality

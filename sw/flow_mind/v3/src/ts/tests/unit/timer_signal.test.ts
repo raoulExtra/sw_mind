@@ -38,5 +38,12 @@ describe('Timer Signal Handling (FR-FM-V3-SIGNAL-01/02/02a)', () => {
       const timer = new TimerSignal({ delay: 1000, unit: 'seconds' })
       assert.strictEqual(timer.hasElapsed(), false)
     })
+
+    it('should return correct milliseconds for each unit type', () => {
+      assert.strictEqual(new TimerSignal({ delay: 1, unit: 'seconds' }).getDelayMs(), 1000)
+      assert.strictEqual(new TimerSignal({ delay: 1, unit: 'minutes' }).getDelayMs(), 60000)
+      assert.strictEqual(new TimerSignal({ delay: 1, unit: 'hours' }).getDelayMs(), 3600000)
+      assert.strictEqual(new TimerSignal({ delay: 1, unit: 'days' }).getDelayMs(), 86400000)
+    })
   })
 })

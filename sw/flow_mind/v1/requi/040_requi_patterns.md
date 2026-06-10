@@ -24,10 +24,10 @@ Design pattern specifications for Flow Mind v1 components. These define rules an
 ## Functional Requirements
 
 ### Design Patterns (Specification)
-- [ ] **FR-FM-OO-09** Factory pattern: flow and agent instantiation rules
+- [ ] **FR-FM-OO-09** Factory pattern: flow and executor instantiation rules
   ```pseudocode
   FlowFactory.create(definition: FlowDef) -> Flow
-  AgentFactory.create(capabilities: AgentCaps) -> Agent
+  ExecutorFactory.create(capabilities: ExecutorCaps) -> Executor
   ```
 - [ ] **FR-FM-OO-10** Observer pattern: state change notification specifications
   ```pseudocode

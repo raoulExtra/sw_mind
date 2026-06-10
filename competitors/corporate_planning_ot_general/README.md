@@ -30,7 +30,7 @@ CP Corporate Planning (CP-Suite) is a German-developed corporate performance man
 - [Service](aspects/product-offerings/service/) - Service and support management
 
 ### Key Features
-- [AI Agents](aspects/key-features/ai-agents/) - AI-powered planning agents
+- [AI Executors](aspects/key-features/ai-agents/) - AI-powered planning agents
 - [Dashboards](aspects/key-features/dashboards/) - IBCS-compliant visualizations
 - [Integrations](aspects/key-features/integrations/) - 250+ system connections
 - [Automations](aspects/key-features/automations/) - Workflow automation

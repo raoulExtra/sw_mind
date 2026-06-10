@@ -47,7 +47,7 @@ In a post-quantum world, a flow engine stops being "just orchestration" and beco
   - *Test*: Traffic analysis reveals no quantum-vulnerable patterns
 
 - [ ] **FR-PQ-05** Internal components use PQ-safe authenticated links
-  - *Acceptance*: Agent ↔ Verifier ↔ Flow communicate over PQ channels
+  - *Acceptance*: Executor ↔ Verifier ↔ Flow communicate over PQ channels
   - *Test*: Network capture shows PQ-safe handshakes
 
 ## 3. Tamper-Evident Execution History

@@ -4,7 +4,7 @@ tags:
 - flow_mind
 - v1
 - flow
-- agent
+- executor
 persona: kilo_extension
 status: active
 version: V00.09.00

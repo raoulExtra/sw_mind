@@ -53,9 +53,9 @@ describe('AuditLog', () => {
         timestamp: Date.now(),
       });
       
-      const byAgent = await auditLog.findByAgentId('agent-1');
-      expect(byAgent).toHaveLength(1);
-      expect(byAgent[0].agent_id).toBe('agent-1');
+      const byExecutor = await auditLog.findByExecutorId('agent-1');
+      expect(byExecutor).toHaveLength(1);
+      expect(byExecutor[0].agent_id).toBe('agent-1');
       
       const all = await auditLog.findAll();
       expect(all).toHaveLength(2);

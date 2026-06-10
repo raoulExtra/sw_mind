@@ -1,16 +1,16 @@
-import { CommitAgent, CommitResult } from '../../CommitAgent';
+import { CommitExecutor, CommitResult } from '../../CommitExecutor';
 import { WriteIntent, createWriteIntent } from '../../WriteIntent';
 import { Database } from '../../Database';
 import { AuditLog } from '../../AuditLog';
 import DatabaseLib from 'better-sqlite3';
 
-describe('CommitAgent', () => {
+describe('CommitExecutor', () => {
   describe('FR-WRITEQ-08: Commit agent must process one intent at a time', () => {
     it('should process intents sequentially', async () => {
       const db = new DatabaseLib(':memory:');
       db.exec('CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)');
       
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       const logs: CommitResult[] = [];
       agent.onLog((result: CommitResult) => logs.push(result));
       
@@ -34,7 +34,7 @@ describe('FR-WRITEQ-09: Each commit must be ACID-compliant', () => {
       db.exec('CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)');
       db.exec('CREATE TABLE other (id INTEGER PRIMARY KEY, value TEXT)');
       
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       const logs: CommitResult[] = [];
       agent.onLog((result: CommitResult) => logs.push(result));
       
@@ -58,7 +58,7 @@ describe('FR-WRITEQ-09: Each commit must be ACID-compliant', () => {
       const db = new Database(':memory:');
       db.exec('CREATE TABLE test (id INTEGER PRIMARY KEY)');
       
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       const logs: CommitResult[] = [];
       agent.onLog((result: CommitResult) => logs.push(result));
       
@@ -74,7 +74,7 @@ describe('FR-WRITEQ-09: Each commit must be ACID-compliant', () => {
 
     it('should handle SQL validation error returning early', async () => {
       const db = new Database(':memory:');
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       const logs: CommitResult[] = [];
       agent.onLog((result: CommitResult) => logs.push(result));
       
@@ -91,7 +91,7 @@ describe('FR-WRITEQ-09: Each commit must be ACID-compliant', () => {
       const db = new Database(':memory:');
       db.exec('CREATE TABLE test (id INTEGER PRIMARY KEY)');
       
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       const logs: CommitResult[] = [];
       agent.onLog((result: CommitResult) => logs.push(result));
       
@@ -119,7 +119,7 @@ describe('FR-WRITEQ-09: Each commit must be ACID-compliant', () => {
       const db = new DatabaseLib(':memory:');
       db.exec('CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)');
       
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       const logs: CommitResult[] = [];
       
       agent.onLog((result: CommitResult) => logs.push(result));
@@ -138,12 +138,12 @@ describe('FR-WRITEQ-09: Each commit must be ACID-compliant', () => {
     });
   });
 
-  describe('REQ-DB-06: CommitAgent accepts database path or connection', () => {
+  describe('REQ-DB-06: CommitExecutor accepts database path or connection', () => {
     it('should accept Database instance', async () => {
       const db = new Database(':memory:');
       db.exec('CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)');
       
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       const logs: CommitResult[] = [];
       agent.onLog((result: CommitResult) => logs.push(result));
       
@@ -157,7 +157,7 @@ describe('FR-WRITEQ-09: Each commit must be ACID-compliant', () => {
     });
     
     it('should accept database path string', async () => {
-      const agent = new CommitAgent(':memory:');
+      const agent = new CommitExecutor(':memory:');
       const logs: CommitResult[] = [];
       agent.onLog((result: CommitResult) => logs.push(result));
       
@@ -170,10 +170,10 @@ describe('FR-WRITEQ-09: Each commit must be ACID-compliant', () => {
     });
   });
 
-  describe('REQ-SHUTDOWN-01: CommitAgent.close() resolves drain()', () => {
+  describe('REQ-SHUTDOWN-01: CommitExecutor.close() resolves drain()', () => {
     it('should resolve drain() when close() is called while waiting', async () => {
       const db = new Database(':memory:');
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       
       const drainPromise = agent.drain();
       
@@ -188,7 +188,7 @@ describe('FR-WRITEQ-09: Each commit must be ACID-compliant', () => {
       const db = new Database(':memory:');
       db.exec('CREATE TABLE test (id INTEGER PRIMARY KEY)');
       
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       const logs: CommitResult[] = [];
       agent.onLog((result: CommitResult) => logs.push(result));
       
@@ -206,7 +206,7 @@ describe('FR-WRITEQ-09: Each commit must be ACID-compliant', () => {
     it('should create INSERT intent with builder', async () => {
       const db = new Database(':memory:');
       db.exec('CREATE TABLE test (value TEXT)');
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       const logs: CommitResult[] = [];
       agent.onLog((result: CommitResult) => logs.push(result));
       
@@ -223,7 +223,7 @@ describe('FR-WRITEQ-09: Each commit must be ACID-compliant', () => {
     it('should create UPDATE intent with builder', async () => {
       const db = new Database(':memory:');
       db.exec('CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)');
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       
       agent.submit(WriteIntent.update('test', { value: 'updated' }, 'id = 1'));
       await agent.drain();
@@ -234,7 +234,7 @@ describe('FR-WRITEQ-09: Each commit must be ACID-compliant', () => {
     it('should create DELETE intent with builder', async () => {
       const db = new Database(':memory:');
       db.exec('CREATE TABLE test (id INTEGER PRIMARY KEY)');
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       
       agent.submit(WriteIntent.delete_('test', 'id = 1'));
       await agent.drain();
@@ -251,14 +251,14 @@ describe('FR-WRITEQ-09: Each commit must be ACID-compliant', () => {
     });
   });
 
-  describe('REQ-AUDIT-01: CommitAgent accepts AuditLog', () => {
+  describe('REQ-AUDIT-01: CommitExecutor accepts AuditLog', () => {
     it('should accept AuditLog instance in constructor', async () => {
       const db = new Database(':memory:');
       db.exec('CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)');
       const auditLog = new AuditLog(db as any);
       await auditLog.init();
       
-      const agent = new CommitAgent(db, auditLog);
+      const agent = new CommitExecutor(db, auditLog);
       const logs: CommitResult[] = [];
       agent.onLog((result: CommitResult) => logs.push(result));
       

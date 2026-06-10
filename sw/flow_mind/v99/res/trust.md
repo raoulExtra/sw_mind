@@ -22,7 +22,7 @@ trust_policy:
       verification: "human"
       tool_access: "whitelist-strict"
       logging: "immutable"
-      notes: "Agent must follow state machine exactly."
+      notes: "Executor must follow state machine exactly."
 
     medium:
       deviation_allowed: true
@@ -31,7 +31,7 @@ trust_policy:
       verification: "verifier-agent"
       tool_access: "whitelist"
       logging: "immutable"
-      notes: "Agent may take safe detours but must justify and log."
+      notes: "Executor may take safe detours but must justify and log."
 
     high:
       deviation_allowed: true

@@ -25,7 +25,7 @@ Conventions: README follows `reuses/conventions/40_conv_readme_content.md`, vers
 
 ### Component Separation
 - Workflow engine handles state transitions and permissions
-- Agent manages ambiguity, planning, and decision-making
+- Executor manages ambiguity, planning, and decision-making
 - Verifier performs independent artifact validation
 - Use artifact classes for plans, outputs, and verification results
 
@@ -36,7 +36,7 @@ Conventions: README follows `reuses/conventions/40_conv_readme_content.md`, vers
 
 ### Object-Oriented Design
 - Composition over inheritance for component integration
-- Factory pattern for flow and agent instantiation
+- Factory pattern for flow and executor instantiation
 - Observer pattern for state change notifications
 - Strategy pattern for verification algorithms
 - See `sw/flow_mind/v1/requi/` for detailed requirements:

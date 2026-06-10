@@ -19,6 +19,7 @@ See also: [Base Flow Template](../v2/010_flow_base.md)
 flow:
   id: error_recovery
   name: "Error Recovery Flow"
+  extends: flow_base_v2
   start_state: start
   states:
     - name: start

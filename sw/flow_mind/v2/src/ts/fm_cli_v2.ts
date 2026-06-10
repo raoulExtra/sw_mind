@@ -179,7 +179,7 @@ export class UserInputTable {
   insert(input: { id: string, text: string, created_at: string }) { return input }
 }
 
-export class CommitAgent {
+export class CommitExecutor {
   private db: any
   constructor(db: any) { this.db = db }
   process() { return true }

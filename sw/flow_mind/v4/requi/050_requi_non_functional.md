@@ -5,6 +5,8 @@ tags:
 - requirements
 - non-functional
 - cross-platform
+- v4
+- executor
 persona: kilo_extension
 status: active
 version: V00.12.00

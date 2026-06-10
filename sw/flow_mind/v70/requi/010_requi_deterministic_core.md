@@ -122,7 +122,7 @@ Before crypto, before signatures, before trust: a flow engine must be perfectly 
   - *Test*: Custom verifier integrated
 
 - [ ] **FR-DET-23** Pluggable agents
-  - *Acceptance*: Agent interface
+  - *Acceptance*: Executor interface
   - *Test*: Custom agent integrated
 
 ## 7. Formalizable Semantics

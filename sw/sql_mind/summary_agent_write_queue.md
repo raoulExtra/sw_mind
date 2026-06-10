@@ -1,5 +1,5 @@
 ```yaml
-title: 'Summary: Agent Write Queue Architecture'
+title: 'Summary: Executor Write Queue Architecture'
 tags:
 - sql_mind
 - summary
@@ -9,7 +9,7 @@ version: V00.01.00
 updated: 2026-06-09
 ```
 
-# Summary: Agent Write Queue Architecture
+# Summary: Executor Write Queue Architecture
 
 ## Core Design
 
@@ -28,7 +28,7 @@ updated: 2026-06-09
 
 ## Safety Rules
 
-1. Agents write ONLY to `write_intent_queue` table
+1. Executors write ONLY to `write_intent_queue` table
 2. Only commit agent mutates domain state
 3. Each intent processed in its own transaction
 4. Graceful shutdown: finish current intent, then exit

@@ -6,9 +6,11 @@ tags:
 - oo
 - implementation
 - v4
+- executor
+- verifier
 persona: kilo_extension
 status: active
-version: V00.12.00
+version: V00.02.00
 updated: 2026-06-08
 summary: 'Object-oriented implementation requirements for Flow Mind v4 flow engine.'
 ```
@@ -38,8 +40,6 @@ This document serves as an index for the v4 OO implementation requirements:
 ## See Also
 
 - Flow Mind v1 OO Specifications: `sw/flow_mind/v1/requi/010_requi_oo_aspects.md` (text-simulatable specifications)
-
----
 
 ## Change History
 

@@ -25,7 +25,7 @@ Conventions: README follows `reuses/conventions/40_conv_readme_content.md`, vers
 
 ### Component Separation
 - Workflow engine handles state transitions and permissions
-- Agent manages ambiguity, planning, and decision-making
+- Executor manages ambiguity, planning, and decision-making
 - Verifier performs independent artifact validation
 - Use artifact classes for plans, outputs, and verification results
 

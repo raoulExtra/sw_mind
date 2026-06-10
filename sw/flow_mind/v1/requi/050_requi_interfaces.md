@@ -36,11 +36,11 @@ Interface contract definitions for Flow Mind v1 components. These specify the co
     getStatus(): WorkflowStatus
   }
   ```
-- [ ] **FR-FM-OO-13** IAgent interface definition
+- [ ] **FR-FM-OO-13** IExecutor interface definition
   ```typescript
-  interface IAgent {
+  interface IExecutor {
     id: string
-    capabilities: AgentCapability[]
+    capabilities: ExecutorCapability[]
     plan(context: WorkflowContext): Promise<Plan>
     handle(ambiguity: Ambiguity): Decision
   }
@@ -69,7 +69,7 @@ Interface contract definitions for Flow Mind v1 components. These specify the co
 ## Test
 
 - [ ] **TEST-FM-OO-12** Unit tests for IWorkflow interface compliance
-- [ ] **TEST-FM-OO-13** Unit tests for IAgent interface compliance
+- [ ] **TEST-FM-OO-13** Unit tests for IExecutor interface compliance
 - [ ] **TEST-FM-OO-14** Unit tests for IVerifier interface compliance
 - [ ] **TEST-FM-OO-15** Unit tests for IArtifact interface compliance
 

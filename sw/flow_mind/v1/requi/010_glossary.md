@@ -6,20 +6,21 @@ tags:
 - v1
 persona: kilo_extension
 status: active
-version: V00.03.00
+version: V00.04.00
 updated: 2026-06-10
 summary: 'Glossary of terms for Flow Mind v1 flow engine.'
+change: 'Replaced Executor with Executor terminology'
 ```
 
 # Glossary: Flow Mind v1
 
-> Version: V00.03.00
+> Version: V00.04.00
 
 ## Terms
 
 | Term | Definition |
 |------|------------|
-| **Agent** | optional: Component that handles ambiguity and planning operations |
+| **Executor** | optional: Component that handles ambiguity and planning operations |
 | **Artifact** | A produced result (plan, output, or verification data) that can be referenced by payloads but not embedded directly if size bigger |
 | **Payload** |  The data carried by a signal at the moment it is emitted. It can reference artifacts.  |
 | **State** | Representation of the flow’s execution status at a given moment. |
@@ -42,4 +43,4 @@ summary: 'Glossary of terms for Flow Mind v1 flow engine.'
 |---------|------|--------|--------|
 | V00.01.00 | 2026-06-08 | ai(kilo laguna) | Initial glossary |
 | V00.02.00 | 2026-06-08 | ai(kilo laguna) | Added Test chapter per convention |
-| V00.03.00 | 2026-06-10 | ai(kilo laguna) | Completed all tests |
+| V00.04.00 | 2026-06-10 | ai(kilo laguna) | Replaced Executor with Executor terminology |

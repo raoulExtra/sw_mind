@@ -4,7 +4,7 @@ You’re basically asking: What if the model learns to attack or bypass the orch
 You defend at the infrastructure and protocol level, not just the prompt level:
 
 No direct write access to the orchestrator:  
-Agents never get to modify the state machine, policies, or their own boundaries.
+Executors never get to modify the state machine, policies, or their own boundaries.
 Those live in a separate, locked configuration layer.
 
 Capability whitelisting:  
@@ -23,7 +23,7 @@ patterns like “disable logging”, “change policy”, “stop verifier”
 If triggered → kill switch, rollback, or human alert.
 
 Immutable logs:  
-Agents can’t edit or delete logs.
+Executors can’t edit or delete logs.
 Once written, the trace is append‑only.
 
 Red‑teaming the orchestration layer itself:  

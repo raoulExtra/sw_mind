@@ -27,7 +27,7 @@ Core architecture requirements defining the hybrid flow engine components: flow 
 
 ### Core Architecture
 - [ ] **FR-FM-01** Workflow engine controls permissions and state transitions
-- [ ] **FR-FM-02** Agent handles ambiguity and planning operations
+- [ ] **FR-FM-02** Executor handles ambiguity and planning operations
 - [ ] **FR-FM-03** Verifier independently checks outputs of artifacts (plans, states)
 - [ ] **FR-FM-04** Hybrid architecture integrates flow, agent, and verifier components
 

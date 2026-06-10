@@ -1,4 +1,4 @@
-# AI Agents
+# AI Executors
 
 AI-powered planning and analytics agents.
 

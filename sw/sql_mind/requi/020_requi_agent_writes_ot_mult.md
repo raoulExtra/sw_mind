@@ -1,5 +1,5 @@
 ```yaml
-title: 'Requirements: Agent Write Queue for Multi-Agent SQLite'
+title: 'Requirements: Executor Write Queue for Multi-Executor SQLite'
 tags:
 - sql_mind
 - requirements
@@ -16,7 +16,7 @@ updated: 2026-06-09
 summary: 'Centralized serialization mechanism for multiple agents writing to SQLite.'
 ```
 
-# Requirements: Agent Write Queue for Multi-Agent SQLite
+# Requirements: Executor Write Queue for Multi-Executor SQLite
 
 > Version: V00.01.00
 
@@ -28,7 +28,7 @@ A write-queue (commit agent) solves the challenges of high write rates, multiple
 
 ### Write Queue
 
-- [ ] **FR-WRITEQ-01** Agents must send write requests to a centralized queue
+- [ ] **FR-WRITEQ-01** Executors must send write requests to a centralized queue
   - *Acceptance*: In-process AsyncQueue, MessageChannel, Redis stream, or HTTP endpoint
 - [ ] **FR-WRITEQ-02** Queue must preserve write order
   - *Acceptance*: FIFO ordering guarantees deterministic commit sequence
@@ -46,7 +46,7 @@ A write-queue (commit agent) solves the challenges of high write rates, multiple
 - [ ] **FR-WRITEQ-07** Write intents must include timestamp
   - *Acceptance*: Unix timestamp for audit and ordering
 
-### Commit Agent Loop
+### Commit Executor Loop
 
 - [ ] **FR-WRITEQ-08** Commit agent must process one intent at a time
   - *Acceptance*: Single-threaded processing ensures no lock contention
@@ -71,7 +71,7 @@ A write-queue (commit agent) solves the challenges of high write rates, multiple
 
 ### Safety
 
-- [ ] **NFR-WRITEQ-02** Agents must never write directly to SQLite
+- [ ] **NFR-WRITEQ-02** Executors must never write directly to SQLite
   - *Acceptance*: Only commit agent touches database
 
 ## Test
@@ -90,10 +90,10 @@ A write-queue (commit agent) solves the challenges of high write rates, multiple
 ## Architecture
 
 ```
-Agent A ----\
-Agent B -----\ 
-Agent C ------>  AsyncQueue  --->  Commit Agent  ---> SQLite (single writer)
-Agent D -----/
+Executor A ----\
+Executor B -----\ 
+Executor C ------>  AsyncQueue  --->  Commit Executor  ---> SQLite (single writer)
+Executor D -----/
 ```
 
 ## Code Reference

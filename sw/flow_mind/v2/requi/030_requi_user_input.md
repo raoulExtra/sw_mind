@@ -29,7 +29,7 @@ User inputs must be stored with unique IDs and persisted via write intents.
 | **User Input** | Artifact submitted by user |
 | **ULID** | Unique identifier for user input |
 | **Write Intent Queue** | SQLite table for pending changes |
-| **Commit-Agent** | Handler that processes write intents |
+| **Commit-Executor** | Handler that processes write intents |
 
 ## Functional Requirements
 

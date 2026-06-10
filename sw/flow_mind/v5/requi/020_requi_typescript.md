@@ -24,7 +24,7 @@ TypeScript-specific implementation requirements for Flow Mind v2 components.
 ## Functional Requirements
 
 ### TypeScript Implementation
-- [ ] **FR-FM-OO-06** Interfaces for all major components (IWorkflow, IAgent, IVerifier)
+- [ ] **FR-FM-OO-06** Interfaces for all major components (IWorkflow, IExecutor, IVerifier)
 - [ ] **FR-FM-OO-07** Generic types for state and artifact definitions
 - [ ] **FR-FM-OO-08** Protected/private members for encapsulation
 - [ ] **FR-FM-OO-09** Public methods for CLI command handling

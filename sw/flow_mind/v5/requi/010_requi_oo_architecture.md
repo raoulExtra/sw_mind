@@ -25,7 +25,7 @@ Code-level object-oriented design requirements for Flow Mind v2 architecture com
 
 ### OO Architecture
 - [ ] **FR-FM-OO-01** Workflow engine as abstract base class with concrete implementations
-- [ ] **FR-FM-OO-02** Agent as interface with multiple strategy implementations
+- [ ] **FR-FM-OO-02** Executor as interface with multiple strategy implementations
 - [ ] **FR-FM-OO-03** Verifier as pluggable components with common interface
 - [ ] **FR-FM-OO-04** State classes with encapsulated state data and transitions
 - [ ] **FR-FM-OO-05** Artifact classes for plans, outputs, and verification results

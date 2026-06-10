@@ -20,6 +20,7 @@ flow:
   id: webhook_handler
   name: "External Event Handler"
   start_state: listening
+  extends: flow_base_v2
   states:
     - name: listening
       on_enter:

@@ -37,12 +37,12 @@ System tests verify the complete write queue integration, ensuring that multiple
 
 ### Integration Points
 
-- [ ] **TEST-INT-01** AsyncQueue integrates with CommitAgent
+- [ ] **TEST-INT-01** AsyncQueue integrates with CommitExecutor
   - *Acceptance*: Items from queue processed correctly by commit agent
-- [ ] **TEST-INT-02** CommitAgent handles multiple concurrent submit calls
+- [ ] **TEST-INT-02** CommitExecutor handles multiple concurrent submit calls
   - *Acceptance*: Sequential processing with proper logging
 - [ ] **TEST-INT-03** AuditLog query interface works end-to-end
-  - *Acceptance*: findByAgentId returns correct subset of operations
+  - *Acceptance*: findByExecutorId returns correct subset of operations
 
 ## Non-Functional Requirements
 
@@ -63,7 +63,7 @@ src/ts/tests/
 ├── unit/
 │   ├── AsyncQueue.test.ts
 │   ├── WriteIntent.test.ts
-│   ├── CommitAgent.test.ts
+│   ├── CommitExecutor.test.ts
 │   └── AuditLog.test.ts
 └── integration/
     └── writeQueue.integration.test.ts

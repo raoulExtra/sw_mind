@@ -25,7 +25,7 @@ This document cross-checks the write queue implementation against SQLite crash-s
 
 ### CR-WRITEQ-01: Multiple Writers Violation
 - **Requirement**: FR-WRITEQ-02 (Queue must preserve write order)
-- **Check**: Only CommitAgent writes to SQLite (NFR-WRITEQ-02)
+- **Check**: Only CommitExecutor writes to SQLite (NFR-WRITEQ-02)
 - **Status**: PASS - Single writer pattern enforced
 
 ### CR-WRITEQ-02: Long-Running Uncommitted Transactions

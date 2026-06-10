@@ -38,7 +38,7 @@ The SQLite database should be configurable via command-line argument and persist
 
 ### Database Access
 
-- [x] **REQ-DB-06** CommitAgent accepts database path or connection
+- [x] **REQ-DB-06** CommitExecutor accepts database path or connection
   - *Acceptance*: Constructor accepts string path or Database instance
 - [x] **REQ-DB-07** Database connection is properly managed
   - *Acceptance*: Connection opened on init, closed on shutdown

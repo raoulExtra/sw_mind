@@ -6,7 +6,7 @@ tags:
 - architecture
 - v4
 - hybrid
-- agent
+- executor
 - verifier
 persona: architect
 status: active
@@ -21,20 +21,20 @@ summary: 'Core architecture requirements for Flow Mind hybrid flow engine.'
 
 ## Overview
 
-Core architecture requirements defining the hybrid flow engine components: flow engine, agent, and verifier.
+Core architecture requirements defining the hybrid flow engine components: flow engine, executor, and verifier.
 
 ## Functional Requirements
 
 ### Core Architecture
 - [ ] **FR-FM-01** Flow engine controls permissions and state transitions
-- [ ] **FR-FM-02** Agent handles ambiguity and planning operations
+- [ ] **FR-FM-02** Executor handles ambiguity and planning operations
 - [ ] **FR-FM-03** Verifier independently checks outputs of artifacts (plans, states)
-- [ ] **FR-FM-04** Hybrid architecture integrates flow, agent, and verifier components
+- [ ] **FR-FM-04** Hybrid architecture integrates flow, executor, and verifier components
 
 ### Flow Execution
 - [ ] **FR-FM-09** Define flow templates with states and transitions
-- [ ] **FR-FM-10** Execute flows with agent interaction
-- [ ] **FR-FM-11** Plan generation and validation by agent
+- [ ] **FR-FM-10** Execute flows with executor interaction
+- [ ] **FR-FM-11** Plan generation and validation by executor
 - [ ] **FR-FM-12** Verification of plan artifacts before execution
 
 ## Change History

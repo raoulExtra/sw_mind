@@ -24,7 +24,7 @@ function validateSql(sql: string): boolean {
   return ALLOWED_STATEMENTS.some(stmt => upperSql.startsWith(stmt));
 }
 
-export class CommitAgent {
+export class CommitExecutor {
   private db: DbWrapper;
   private queue: AsyncQueue<WriteIntent>;
   private logCallback?: LogCallback;

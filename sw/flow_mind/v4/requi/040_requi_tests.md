@@ -58,7 +58,7 @@ Multiple consumers blocked → all wake on close
 
 Zero‑submission drain() returns immediately
 
-🧩 4. CommitAgent
+🧩 4. CommitExecutor
 Process logic
 process(intent) applies SQL builder output correctly
 
@@ -98,7 +98,7 @@ Canonical SQL serialization
 Identical SQL output in TS and Python
 
 ⭐ SYSTEM‑LEVEL TEST REQUIREMENTS
-These validate the entire system working together: flows, signals, guards, queue, commit agent, SQL builder, audit log.
+These validate the entire system working together: flows, signals, guards, queue, commit executor, SQL builder, audit log.
 
 🚦 1. End‑to‑End Flow Execution
 Load flow → send signal → guard evaluates → transition fires → next state reached
@@ -117,7 +117,7 @@ Signals with schemas validate payloads
 Invalid payloads produce validation errors
 
 🚦 3. Commit Pipeline
-WriteIntent → Queue → CommitAgent → SQL → AuditLog
+WriteIntent → Queue → CommitExecutor → SQL → AuditLog
 
 All components interact deterministically
 
@@ -147,7 +147,7 @@ drain() waits for all pending intents
 
 drain() returns immediately when zero submissions
 
-close() stops agent cleanly even when blocked
+close() stops executor cleanly even when blocked
 
 No intents processed after close
 

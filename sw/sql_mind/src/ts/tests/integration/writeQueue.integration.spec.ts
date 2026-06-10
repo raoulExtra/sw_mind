@@ -1,5 +1,5 @@
 import { AsyncQueue } from '../../AsyncQueue';
-import { CommitAgent, CommitResult } from '../../CommitAgent';
+import { CommitExecutor, CommitResult } from '../../CommitExecutor';
 import { createWriteIntent, WriteIntent } from '../../WriteIntent';
 import { Database } from '../../Database';
 import { AuditLog } from '../../AuditLog';
@@ -12,7 +12,7 @@ describe('Write Queue Integration', () => {
       db.exec('CREATE TABLE events (id INTEGER PRIMARY KEY, agent TEXT, data TEXT)');
       
       const queue = new AsyncQueue<{ sql: string; params: any[] }>();
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       const results: CommitResult[] = [];
       agent.onLog((r) => results.push(r));
       
@@ -33,12 +33,12 @@ describe('Write Queue Integration', () => {
       agent.close();
     });
 
-    it('should integrate AsyncQueue with CommitAgent', async () => {
+    it('should integrate AsyncQueue with CommitExecutor', async () => {
       const db = new Database(':memory:');
       db.exec('CREATE TABLE items (id INTEGER PRIMARY KEY, value TEXT)');
       
       const queue = new AsyncQueue<string>();
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       
       const items = ['first', 'second', 'third'];
       items.forEach(item => queue.push(item));
@@ -63,7 +63,7 @@ describe('Write Queue Integration', () => {
   describe('REQ-SYS-01: End-to-end flow', () => {
     it('should persist intent to database through full flow', async () => {
       const db = new Database(':memory:');
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       const logs: CommitResult[] = [];
       agent.onLog(r => logs.push(r));
       
@@ -82,7 +82,7 @@ describe('Write Queue Integration', () => {
       const auditLog = new AuditLog(db as any);
       await auditLog.init();
       
-      const agent1 = new CommitAgent(db, auditLog);
+      const agent1 = new CommitExecutor(db, auditLog);
       agent1.submit(createWriteIntent('INSERT INTO test (value) VALUES (\'test\')'));
       await agent1.drain();
       agent1.close();
@@ -90,7 +90,7 @@ describe('Write Queue Integration', () => {
       const allLogs = await auditLog.findAll();
       expect(allLogs.length).toBe(1);
       
-      const agent2 = new CommitAgent(db);
+      const agent2 = new CommitExecutor(db);
       await agent2.drain();
       agent2.close();
     });
@@ -100,7 +100,7 @@ describe('Write Queue Integration', () => {
     it('should process pending intents before exit on close()', async () => {
       const db = new Database(':memory:');
       db.exec('CREATE TABLE pending (id INTEGER PRIMARY KEY, value TEXT)');
-      const agent = new CommitAgent(db);
+      const agent = new CommitExecutor(db);
       const logs: CommitResult[] = [];
       agent.onLog(r => logs.push(r));
       

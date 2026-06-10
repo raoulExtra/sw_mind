@@ -5,6 +5,8 @@ tags:
 - cli
 - requirements
 - interface
+- v4
+- executor
 persona: kilo_extension
 status: active
 version: V00.12.00
@@ -25,7 +27,7 @@ CLI interface requirements for flow execution and state management.
 ### CLI Interface
 - [ ] **FR-FM-13** `fm_cli run <flow>` command to execute flows
 - [ ] **FR-FM-14** `fm_cli status` to show current state
-- [ ] **FR-FM-15** `fm_cli plan` to generate plans
+- [ ] **FR-FM-15** `fm_cli execute` to run executors
 - [ ] **FR-FM-16** `fm_cli verify` to validate current state
 
 ---
