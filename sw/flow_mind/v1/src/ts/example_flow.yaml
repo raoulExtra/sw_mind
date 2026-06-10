@@ -1,0 +1,28 @@
+flow:
+  id: simple_plan
+  name: "Simple Plan Execution"
+  start_state: init
+  states:
+    - name: init
+      on_enter:
+        - log: "Starting flow"
+      transitions:
+        - to: plan
+          when: always
+    - name: plan
+      on_enter:
+        - executor: generate_plan
+      transitions:
+        - to: verify
+          when: plan_ready
+    - name: verify
+      on_enter:
+        - executor: validate_plan
+      transitions:
+        - to: complete
+          when: plan_valid
+        - to: plan
+          when: plan_invalid
+    - name: complete
+      on_enter:
+        - log: "Flow complete"
