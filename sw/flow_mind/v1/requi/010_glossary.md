@@ -25,8 +25,7 @@ change: 'Replaced Agent with Executor terminology'
 | **Payload** |  The data carried by a signal at the moment it is emitted. It can reference artifacts.  |
 | **State** | Representation of the flow’s execution status at a given moment. |
 | **Transition** | Directed movement from one state to another, triggered by a signal. |
-| **Verifier** | optional: Component that independently validates artifacts |
-| **Flow** | Defined sequence of states and transitions |
+| **Flow** | Declarative definition of a flow with states, transitions, signals, and guards. |
 | **Signal** | Event that triggers transitions and carries a payload |
 | **Guard** | optional: A condition attached to a Transition that determines whether the Transition is allowed to fire. |
 ---
