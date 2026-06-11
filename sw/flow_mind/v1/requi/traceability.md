@@ -18,9 +18,9 @@ This file maps requirements to tests and suggested implementation targets.
   - Example: add `requi/executor_capabilities.yaml`
   - Implementation target: `src/ts/executor/*` (IExecutor)
 
-- **FR-FM-OO-03** Verifier rule definitions with validation criteria
+- **FR-FM-OO-03** Executor rule definitions with validation criteria
   - Test: **TEST-FM-OO-03**
-  - Implementation target: `src/ts/verifier/*` (IVerifier)
+  - Implementation target: `src/ts/executor/*` (IExecutor)
 
 - **FR-FM-OO-04** State representation with encapsulated data and transitions
   - Test: **TEST-FM-OO-04**

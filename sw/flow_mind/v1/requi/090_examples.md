@@ -40,7 +40,7 @@ flow:
           when: plan_ready
     - name: verify
       on_enter:
-        - verifier: validate_plan
+        - executor: validate_plan
       transitions:
         - to: complete
           when: plan_valid

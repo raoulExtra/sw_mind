@@ -52,7 +52,7 @@ Core domain model specifications for Flow Mind v1 components. These can be simul
 - [ ] **FR-FM-OO-02** Executor capability specification with ambiguity handling
   - *Acceptance*: Executor config specifies max ambiguity threshold (0.0-1.0)
 - [ ] **FR-FM-OO-03** Verifier rule definitions with validation criteria
-  - *Acceptance*: Each verifier rule has named criteria and expected result type
+  - *Acceptance*: Each executor rule has named criteria and expected result type
 - [ ] **FR-FM-OO-04** State representation with encapsulated data and transitions
   - *Acceptance*: State includes data fields and list of valid next states
 - [ ] **FR-FM-OO-05** Artifact classes for plans, outputs, and verification results
@@ -62,7 +62,7 @@ Core domain model specifications for Flow Mind v1 components. These can be simul
 
 - [ ] **TEST-FM-OO-01** Unit tests for flow definition parsing and validation
 - [ ] **TEST-FM-OO-02** Unit tests for executor capability specification validation
-- [ ] **TEST-FM-OO-03** Unit tests for verifier rule definitions
+- [ ] **TEST-FM-OO-03** Unit tests for executor rule definitions
 - [ ] **TEST-FM-OO-04** Unit tests for state representation and transitions
 - [ ] **TEST-FM-OO-05** Unit tests for artifact class schemas
 - [ ] **TEST-FM-OO-06** CLI tests for `--help` and `--version` arguments

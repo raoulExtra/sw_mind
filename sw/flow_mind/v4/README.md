@@ -5,7 +5,7 @@ tags:
 - v4
 - hybrid
 - executor
-- verifier
+- executor
 persona: architect
 status: active
 version: V00.12.00

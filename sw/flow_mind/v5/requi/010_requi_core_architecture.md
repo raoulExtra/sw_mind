@@ -21,7 +21,7 @@ summary: 'Core architecture requirements for Flow Mind hybrid flow engine.'
 
 ## Overview
 
-Core architecture requirements defining the hybrid flow engine components: flow engine, executor, and verifier.
+Core architecture requirements defining the hybrid flow engine components: flow engine, executor, and executor.
 
 ## Functional Requirements
 
@@ -29,7 +29,7 @@ Core architecture requirements defining the hybrid flow engine components: flow 
 - [ ] **FR-FM-01** Workflow engine controls permissions and state transitions
 - [ ] **FR-FM-02** Executor handles ambiguity and planning operations
 - [ ] **FR-FM-03** Verifier independently checks outputs of artifacts (plans, states)
-- [ ] **FR-FM-04** Hybrid architecture integrates flow, executor, and verifier components
+- [ ] **FR-FM-04** Hybrid architecture integrates flow, executor, and executor components
 
 ### Workflow Execution
 - [ ] **FR-FM-09** Define flow templates with states and transitions

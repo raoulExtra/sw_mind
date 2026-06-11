@@ -19,7 +19,7 @@ unusual tool usage
 
 attempts to access forbidden resources
 
-patterns like “disable logging”, “change policy”, “stop verifier”
+patterns like “disable logging”, “change policy”, “stop executor”
 If triggered → kill switch, rollback, or human alert.
 
 Immutable logs:  
@@ -28,7 +28,7 @@ Once written, the trace is append‑only.
 
 Red‑teaming the orchestration layer itself:  
 You explicitly test:
-“Try to disable the verifier.”
+“Try to disable the executor.”
 “Try to bypass the state machine.”
 “Try to escalate your own permissions.”
 And then harden against every successful attempt.

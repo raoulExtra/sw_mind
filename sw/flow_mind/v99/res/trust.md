@@ -28,7 +28,7 @@ trust_policy:
       deviation_allowed: true
       deviation_scope: "bounded"
       explanation_required: "detailed"
-      verification: "verifier-agent"
+      verification: "executor-agent"
       tool_access: "whitelist"
       logging: "immutable"
       notes: "Executor may take safe detours but must justify and log."
@@ -64,7 +64,7 @@ trust_policy:
     environment_logs:
       source: ["tools", "api_calls", "file_changes"]
       tamper_protection: "append_only"
-    verifier_agent:
+    executor_agent:
       role: "cross-check reasoning, actions, and logs"
       independence: "must_not_share_context_with_actor"
 
@@ -73,9 +73,9 @@ trust_policy:
     capability_model: "tool-based, no direct system access"
     watchdog:
       enabled: true
-      monitors: ["log_deletion", "policy_change", "verifier_disable"]
+      monitors: ["log_deletion", "policy_change", "executor_disable"]
       response: "halt_and_notify"
     red_team:
       schedule: "continuous"
-      targets: ["state_machine", "verifier", "trust_policy"]
+      targets: ["state_machine", "executor", "trust_policy"]
 ```

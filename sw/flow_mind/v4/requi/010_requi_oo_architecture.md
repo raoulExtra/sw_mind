@@ -7,7 +7,7 @@ tags:
 - architecture
 - v4
 - executor
-- verifier
+- executor
 persona: kilo_extension
 status: active
 version: V00.12.00

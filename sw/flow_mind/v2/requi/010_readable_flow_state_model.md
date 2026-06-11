@@ -110,7 +110,7 @@ transitions:
 
 Actions are units of work executed during state lifecycle.
 
-- **type**: log, http, executor, verifier, custom
+- **type**: log, http, executor, executor, custom
 - **payload**: Action-specific data
 
 ```yaml

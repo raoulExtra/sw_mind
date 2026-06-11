@@ -52,7 +52,7 @@ Beneath all machinery is a simple question: What are we actually trying to do—
 ## 3. Trust Model as First-Class Concept
 
 - [ ] **FR-HUMAN-07** Explicit trust graph
-  - *Acceptance*: Users, operators, models, tools, verifiers listed
+  - *Acceptance*: Users, operators, models, tools, executors listed
   - *Test*: Trust graph serialized and validated
 
 - [ ] **FR-HUMAN-08** Flows encode trust boundaries

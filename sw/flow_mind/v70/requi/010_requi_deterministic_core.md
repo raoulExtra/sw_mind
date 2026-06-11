@@ -117,9 +117,9 @@ Before crypto, before signatures, before trust: a flow engine must be perfectly 
   - *Acceptance*: StorageProvider interface
   - *Test*: In-memory storage works
 
-- [ ] **FR-DET-22** Pluggable verifiers
+- [ ] **FR-DET-22** Pluggable executors
   - *Acceptance*: Verifier interface
-  - *Test*: Custom verifier integrated
+  - *Test*: Custom executor integrated
 
 - [ ] **FR-DET-23** Pluggable agents
   - *Acceptance*: Executor interface

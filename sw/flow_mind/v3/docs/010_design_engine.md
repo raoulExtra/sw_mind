@@ -28,7 +28,7 @@ summary: 'Design document for Flow Mind v3 simulation engine.'
 │              Execution Engine                              │
 │  - Sequential transitions                                │
 │  - Conditional guards (when/equals)                       │
-│  - Built-in handlers (log, emit, agent, verifier)         │
+│  - Built-in handlers (log, emit, agent, executor)         │
 ├─────────────────────────────────────────────────────────┤
 │              Output & Observability                      │
 │  - Structured logs (JSON)                                 │

@@ -122,6 +122,22 @@ export function savePngFile(flow: FlowDef, outputPath: string): boolean {
   }
 }
 
+export function saveFlowDiagram(flow: FlowDef, outputDir: string, flowId: string): { dotPath: string, pngPath?: string } {
+  const dotPath = path.join(outputDir, `${flowId}.dot`)
+  const pngPath = path.join(outputDir, `${flowId}.png`)
+  saveDotFile(flow, dotPath)
+  const pngSuccess = savePngFile(flow, pngPath)
+  return { dotPath, pngPath: pngSuccess ? pngPath : undefined }
+}
+
+export function saveFlowDiagramToDefault(flow: FlowDef): { dotPath: string, pngPath?: string } {
+  const outputDir = path.join(__dirname, '../../res/diagrams')
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true })
+  }
+  return saveFlowDiagram(flow, outputDir, flow.id)
+}
+
 export interface RequirementMapping {
   requirementId: string
   componentType: 'state' | 'transition' | 'action'

@@ -27,7 +27,7 @@ replace_workflow_to_flow() {
     echo "Total: $count replacement(s) in $(echo -e "$modified_files" | grep -c .) file(s)"
 }
 
-replace_verifier_to_agent() {
+replace_verifier_to_executor() {
     local folder="${1:-.}"
     local count=0
     local modified_files=""
@@ -37,13 +37,13 @@ replace_verifier_to_agent() {
         exit 1
     fi
     
-    echo "Replacing 'verifier' with 'agent' in: $folder"
+    echo "Replacing 'verifier' with 'executor' in: $folder"
     echo "=================================================="
     
     while IFS= read -r -d '' file; do
         local matches=$(grep -oE "verifier" "$file" 2>/dev/null | wc -l)
         if [ "$matches" -gt 0 ]; then
-            sed -i 's/verifier:/agent:/g' "$file"
+            sed -i 's/verifier/executor/g' "$file"
             modified_files="$modified_files$file\n"
             count=$((count + matches))
             echo "  $file: $matches replacement(s)"
@@ -170,7 +170,7 @@ else
             replace_workflow_to_flow "${2:-.}"
             ;;
         verifier)
-            replace_verifier_to_agent "${2:-.}"
+            replace_verifier_to_executor "${2:-.}"
             ;;
         agent)
             replace_agent_to_executor "${2:-.}"
@@ -187,8 +187,8 @@ else
         *)
             echo "Usage: $0 [workflow|verifier|agent|Agent|CommitAgent|commitagent] [folder]"
             echo "  $0 workflow .        - Replace Workflow->Flow"
-            echo "  $0 verifier .          - Replace verifier->agent"
-            echo "  $0 agent .             - Replace agent->executor"
+            echo "  $0 verifier .         - Replace verifier->executor"
+            echo "  $0 agent .            - Replace agent->executor"
             echo "  $0 Agent .             - Replace Agent->Executor"
             echo "  $0 CommitAgent .       - Replace CommitAgent->CommitExecutor"
             echo "  $0 commitagent .       - Replace commitagent->commitexecutor"

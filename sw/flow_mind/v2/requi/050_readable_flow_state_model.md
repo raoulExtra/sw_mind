@@ -16,7 +16,7 @@ version: V00.03.00
 updated: 2026-06-10
 requi_id: REQUI-FM-V2-050
 summary: 'A clean, human-readable machine model for Flow Mind flows.'
-change: 'Replaced verifier with agent'
+change: 'Replaced executor with executor'
 ```
 
 # Readable Flow State Model
@@ -196,4 +196,4 @@ states:
 |---------|------|--------|--------|
 | V00.01.00 | 2026-06-09 | ai(kilo laguna) | Initial readable flow state model requirements |
 | V00.02.00 | 2026-06-10 | ai(kilo laguna) | Implemented all requirements and tests |
-| V00.03.00 | 2026-06-10 | ai(kilo laguna) | Replaced verifier with agent
+| V00.03.00 | 2026-06-10 | ai(kilo laguna) | Replaced executor with executor

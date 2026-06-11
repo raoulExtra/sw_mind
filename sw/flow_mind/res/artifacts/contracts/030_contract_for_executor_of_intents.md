@@ -3,11 +3,11 @@ title: 'Contract: Verifier of Intents'
 tags:
 - flow_mind
 - contract
-- verifier
+- executor
 - intents
 - verification
 - v1
-persona: verifier
+persona: executor
 status: active
 version: V00.01.00
 updated: 2026-06-08
@@ -59,7 +59,7 @@ summary: 'Contract for verifying intents against plans and requirements'
 
 ```yaml
 flow:
-  id: verifier_of_intents
+  id: executor_of_intents
   name: "Verifier of Intents"
   type: flow
   extends: 010_flow_base
